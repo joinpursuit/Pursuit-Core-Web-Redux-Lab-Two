@@ -1,0 +1,7 @@
+.item {
+  list-style: none;
+}
+
+.item:active {
+  text-decoration: line-through;
+}
