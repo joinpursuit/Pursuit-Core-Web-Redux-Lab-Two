@@ -33,9 +33,9 @@ export default (state = initialState, action) => {
         case TOGGLE_COMPLETE:
             stateCopy.todo.completed = true
             break
-        case VISIBILITY_FILTER:
-            stateCopy.visibilityFilter = action.payload
-            break
+        // case VISIBILITY_FILTER:
+        //     stateCopy.visibilityFilter = action.payload
+        //     break
         default:
             break
     }

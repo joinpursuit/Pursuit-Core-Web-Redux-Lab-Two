@@ -18,9 +18,9 @@ export const toggleComplete = () => {
     };
 };
 
-export const changeVisibilityFilter = (payload) => {
-    return {
-        type: VISIBILITY_FILTER,
-        payload
-    };
-};
+// export const changeVisibilityFilter = (payload) => {
+//     return {
+//         type: VISIBILITY_FILTER,
+//         payload
+//     };
+// };

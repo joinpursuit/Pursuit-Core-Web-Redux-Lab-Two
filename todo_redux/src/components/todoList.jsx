@@ -5,27 +5,24 @@ import TodoItem from './todoItem';
 
 
 
-class List extends React.Component {
+const List = (props) => {
 
 
+    let todosArr = props.todoReducer.todos
 
-    render() {
-        console.log("todo list")
-
-        return (
-            <ul className='list'>
-                {
-                    this.props.todoReducer.todos.map(item => {
-
-                        return (
-                            <TodoItem todo={item.todo.text} key={item.todo.id} />
-                        )
+    console.log(todosArr)
+    return (
+        <ul className='list'>
+            {
+                todosArr && todosArr.length
+                    ? todosArr.map(item => {
+                        return <TodoItem todo={item.todo.text} key={item.todo.id} className='item' />
                     })
-                }
+                    : 'Enter Task'
+            }
 
-            </ul>
-        )
-    }
+        </ul>
+    )
 }
 
 const mapStateToProps = (state) => {
