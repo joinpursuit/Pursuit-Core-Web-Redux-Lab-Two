@@ -1,7 +1,7 @@
-.item {
+ul {
   list-style: none;
 }
 
-.item:active {
+.todo-item-completed:active {
   text-decoration: line-through;
 }

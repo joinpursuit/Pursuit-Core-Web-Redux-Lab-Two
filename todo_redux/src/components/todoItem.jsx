@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import { connect } from 'react-redux'
-import { toggleComplete } from '../store/actions/todoAction ';
-import './todoCss.css'
+import { toggleTodo } from '../store/actions/todoAction ';
+import './todo.css'
 
 class TodoItem extends React.Component {
     constructor(props) {
@@ -12,31 +12,35 @@ class TodoItem extends React.Component {
     }
     componentDidMount() {
 
-        toast.success(`New Todo added: ${this.props.todoReducer.todo.text}`);
+        toast.success(`New Todo added: ${this.props.todo}`);
     }
     componentWillUnmount() {
         toast.error(`New Todo delete ${this.props.todo}`);
     }
 
     render() {
-        console.log("rendered", this.props)
+        console.log("rendered", this.props.bool)
         return (
-            <li className='item' onClick={this.props.toggleComplete}>
+            <li onClick={() => this.props.toggleTodo()}
+                className={
+                    !this.props.bool ? 'todo-item' : "todo-item-completed"
+                }
+            >
                 {this.props.todo}
-            </li>
+            </li >
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return state
-}
+// const mapStateToProps = (state) => {
+//     return state
+// }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleComplete: data => dispatch(toggleComplete()),
+        toggleTodo: data => dispatch(toggleTodo()),
 
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);
+export default connect(null, mapDispatchToProps)(TodoItem);

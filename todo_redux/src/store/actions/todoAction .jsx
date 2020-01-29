@@ -12,7 +12,7 @@ export const addTodo = () => {
     };
 };
 
-export const toggleComplete = () => {
+export const toggleTodo = () => {
     return {
         type: TOGGLE_COMPLETE,
     };

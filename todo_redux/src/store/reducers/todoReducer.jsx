@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
             stateCopy.todos = [...stateCopy.todos, newItem]
             break
         case TOGGLE_COMPLETE:
-            stateCopy.todo.completed = true
+            stateCopy.todo.completed = !stateCopy.todo.completed
             break
         case SET_FILTER: {
             return action.payload.filter;

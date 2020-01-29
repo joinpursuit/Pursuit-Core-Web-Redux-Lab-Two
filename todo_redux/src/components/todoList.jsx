@@ -1,11 +1,11 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import TodoItem from './todoItem';
+import './todo.css'
 
 
-
-const List = (props) => {
+const List = memo((props) => {
 
 
     let todosArr = props.todoReducer.todos
@@ -16,14 +16,14 @@ const List = (props) => {
             {
                 todosArr && todosArr.length
                     ? todosArr.map(item => {
-                        return <TodoItem todo={item.todo.text} key={item.todo.id} className='item' />
+                        return <TodoItem todo={item.todo.text} key={item.todo.id} className='item' bool={item.todo.completed} />
                     })
                     : 'Enter Task'
             }
 
         </ul>
     )
-}
+})
 
 const mapStateToProps = (state) => {
     return state
