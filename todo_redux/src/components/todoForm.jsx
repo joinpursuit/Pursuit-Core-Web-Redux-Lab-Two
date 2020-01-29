@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { newTodo } from '../store/actions/todoAction '
+import { newTodo, addTodo } from '../store/actions/todoAction '
 
 const TodoForm = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={e => {
+            e.preventDefault()
+            props.addTodo()
+        }}>
             <input type="text" onChange={props.newTodo} placeholder='Enter a Todo' />
         </form>
     )
@@ -20,6 +23,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         newTodo: data => dispatch(newTodo(data)),
+        addTodo: data => dispatch(addTodo(data)),
+
     }
 }
 
