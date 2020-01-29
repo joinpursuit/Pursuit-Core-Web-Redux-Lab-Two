@@ -11,9 +11,8 @@ class TodoItem extends React.Component {
         console.log('constructor hit');
     }
     componentDidMount() {
-        console.log('mounted');
 
-        toast.success(`New Todo added: ${this.props.todo}`);
+        toast.success(`New Todo added: ${this.props.todoReducer.todo.text}`);
     }
     componentWillUnmount() {
         toast.error(`New Todo delete ${this.props.todo}`);

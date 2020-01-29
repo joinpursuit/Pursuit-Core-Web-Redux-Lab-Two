@@ -7,11 +7,7 @@ import TodoItem from './todoItem';
 
 class List extends React.Component {
 
-    shouldComponentUpdate(prevProps, prevState) {
-        // if (this.props.todoReducer.nextTodId === prevProps.todoReducer.nextTodId) {
-        return true
-        // }
-    }
+
 
     render() {
         console.log("todo list")
