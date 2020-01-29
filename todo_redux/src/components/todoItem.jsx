@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { toggleComplete } from '../store/actions/todoAction ';
 import './todoCss.css'
 
-class TodoItem extends React.PureComponent {
+class TodoItem extends React.Component {
     constructor(props) {
         super(props)
 
@@ -12,7 +12,7 @@ class TodoItem extends React.PureComponent {
     }
     componentDidMount() {
 
-        toast.success(`New Todo added: ${this.props.todo}`);
+        toast.success(`New Todo added: ${this.props.todoReducer.todo.text}`);
     }
     componentWillUnmount() {
         toast.error(`New Todo delete ${this.props.todo}`);
@@ -21,22 +21,22 @@ class TodoItem extends React.PureComponent {
     render() {
         console.log("rendered", this.props)
         return (
-            <li className='item'>
+            <li className='item' onClick={this.props.toggleComplete}>
                 {this.props.todo}
             </li>
         )
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return state
-// }
+const mapStateToProps = (state) => {
+    return state
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         toggleComplete: data => dispatch(toggleComplete()),
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleComplete: data => dispatch(toggleComplete()),
 
-//     }
-// }
+    }
+}
 
-export default TodoItem;
+export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);

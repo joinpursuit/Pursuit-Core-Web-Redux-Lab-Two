@@ -1,4 +1,4 @@
-import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE } from "./actionTypes";
+import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE, SET_FILTER } from "./actionTypes";
 
 export const newTodo = (text) => {
     return {
@@ -17,6 +17,8 @@ export const toggleComplete = () => {
         type: TOGGLE_COMPLETE,
     };
 };
+
+export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });
 
 // export const changeVisibilityFilter = (payload) => {
 //     return {
