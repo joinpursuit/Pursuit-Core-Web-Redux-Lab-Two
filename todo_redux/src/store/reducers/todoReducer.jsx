@@ -1,8 +1,11 @@
 
-import { ADD_TODO } from '../actions/actionTypes';
+import { ADD_TODO, VISIBILITY_FILTER } from '../actions/actionTypes';
 
 const initialState = {
-    todo: [],
+    nextTodoId: 0,
+    todos: [],
+    text: '',
+    visibilityFilter: 'all'
 }
 
 export default (state = initialState, action) => {
@@ -11,7 +14,10 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_TODO:
-            stateCopy.todo = action.payload
+            stateCopy.todos = action.payload
+            break
+        case VISIBILITY_FILTER:
+            stateCopy.visibilityFilter = action.payload
             break
         default:
             break
