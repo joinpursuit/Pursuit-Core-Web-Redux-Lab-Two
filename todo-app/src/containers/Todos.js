@@ -6,17 +6,7 @@ import { addTodo, removeTodo, toggleCompleted } from '../actions/todoActions'
 const Todos = ({ addTodo, removeTodo, toggleCompleted, todoReducer }) => {
     const [state, setState] = useState('')
     const crossOut = e => e.target.attributes.status.value === 'done' ? e.target.style.textDecoration = '' : e.target.style.textDecoration = 'line-through';
-    //     e.target = {
-    //         ...e.target,
-    //         style: e.target.completed === true | { ...e.target.style, textDecoration: 'line-through' }
-    //         ,
-    //         completed: !e.target.completed
-    //     }
 
-    //     // e.target.style.textDecoration = 'line-through'
-    // e.target.completed = !e.target.completed
-
-    // );
     return (
         <div>
             <h1>Todo</h1>
