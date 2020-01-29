@@ -20,21 +20,30 @@ class TodoItem extends React.Component {
 
     render() {
         console.log("rendered", this.props.bool)
+        let todosArr = this.props.todoReducer.todos
+
         return (
-            <li onClick={() => this.props.toggleTodo()}
-                className={
-                    !this.props.bool ? 'todo-item' : "todo-item-completed"
-                }
-            >
-                {this.props.todo}
-            </li >
+
+            todosArr && todosArr.length
+                ? todosArr.map(item => {
+                    return (
+                        <li onClick={() => this.props.toggleTodo()}
+                            className={
+                                !item.todo.bool ? 'todo-item' : "todo-item-completed"
+                            }
+                        >
+                            {item.todo.text}
+                        </li >
+                    )
+                })
+                : 'Enter Task'
         )
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return state
-// }
+const mapStateToProps = (state) => {
+    return state
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -43,4 +52,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(TodoItem);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);
