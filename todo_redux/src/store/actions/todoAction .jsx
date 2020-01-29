@@ -1,8 +1,8 @@
-import { ADD_TODO, VISIBILITY_FILTER } from "./actionTypes";
+import { NEW_TODO, VISIBILITY_FILTER } from "./actionTypes";
 
-export const addTodo = (payload) => {
+export const newTodo = (payload) => {
     return {
-        type: ADD_TODO,
+        type: NEW_TODO,
         payload
     };
 };
