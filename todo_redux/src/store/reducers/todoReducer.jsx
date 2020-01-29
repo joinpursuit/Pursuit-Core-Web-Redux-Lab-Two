@@ -1,5 +1,5 @@
 
-import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO } from '../actions/actionTypes';
+import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE } from '../actions/actionTypes';
 
 const initialState = {
     nextTodoId: 0,
@@ -8,7 +8,6 @@ const initialState = {
     todo: {
         id: 0,
         text: '',
-        completed: ''
     }
 }
 
@@ -30,6 +29,9 @@ export default (state = initialState, action) => {
             let nextTodoId = stateCopy.nextTodoId
             const newItem = { todo, nextTodoId }
             stateCopy.todos = [...stateCopy.todos, newItem]
+            break
+        case TOGGLE_COMPLETE:
+            stateCopy.todo.completed = true
             break
         case VISIBILITY_FILTER:
             stateCopy.visibilityFilter = action.payload

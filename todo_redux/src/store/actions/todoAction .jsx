@@ -1,4 +1,4 @@
-import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO } from "./actionTypes";
+import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE } from "./actionTypes";
 
 export const newTodo = (payload) => {
     return {
@@ -9,7 +9,12 @@ export const newTodo = (payload) => {
 export const addTodo = () => {
     return {
         type: ADD_TODO,
-        // payload
+    };
+};
+
+export const toggleComplete = () => {
+    return {
+        type: TOGGLE_COMPLETE,
     };
 };
 
