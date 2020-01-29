@@ -1,9 +1,9 @@
 import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE } from "./actionTypes";
 
-export const newTodo = (payload) => {
+export const newTodo = (text) => {
     return {
         type: NEW_TODO,
-        payload
+        text
     };
 };
 export const addTodo = () => {

@@ -18,18 +18,12 @@ class TodoItem extends React.Component {
     componentWillUnmount() {
         toast.error(`New Todo delete ${this.props.todo}`);
     }
-    shouldComponentUpdate() {
-        return false
-    }
 
     render() {
         console.log("rendered", this.props)
         return (
-            <li className='item' >
-                <p onClick={(event) => {
-                    event.preventDefault()
-                    this.props.toggleComplete()
-                }} style={{ textDecoration: this.props.toggleCompleted ? "line-through" : null }}> {this.props.todo} </p>
+            <li className='item' onClick={this.props.toggleComplete}>
+                {this.props.todo}
             </li>
         )
     }
@@ -41,7 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleComplete: data => dispatch(toggleComplete(data)),
+        toggleComplete: data => dispatch(toggleComplete()),
 
     }
 }

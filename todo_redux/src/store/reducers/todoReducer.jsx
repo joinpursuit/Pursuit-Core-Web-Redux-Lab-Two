@@ -2,7 +2,7 @@
 import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE } from '../actions/actionTypes';
 
 const initialState = {
-    nextTodoId: 0,
+    nextTodoId: 1,
     todos: [],
     visibilityFilter: 'all',
     todo: {
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
         case NEW_TODO:
             stateCopy.todo = {
                 id: stateCopy.nextTodoId,
-                text: action.payload.target.value,
+                text: action.text,
                 completed: false
             }
             break

@@ -9,7 +9,7 @@ const TodoForm = (props) => {
             e.preventDefault()
             props.addTodo()
         }}>
-            <input type="text" onChange={props.newTodo} placeholder='Enter a Todo' />
+            <input type="text" onChange={e => props.newTodo(e.target.value)} placeholder='Enter a Todo' />
         </form>
     )
 

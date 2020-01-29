@@ -5,11 +5,13 @@ import TodoItem from './todoItem';
 
 
 
-class List extends React.PureComponent {
+class List extends React.Component {
 
-    // shouldComponentUpdate() {
-    //     return false
-    // }
+    shouldComponentUpdate(prevProps, prevState) {
+        // if (this.props.todoReducer.nextTodId === prevProps.todoReducer.nextTodId) {
+        return true
+        // }
+    }
 
     render() {
         console.log("todo list")
