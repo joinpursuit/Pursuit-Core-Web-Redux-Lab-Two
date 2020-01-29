@@ -4,8 +4,12 @@ import { NEW_TODO, VISIBILITY_FILTER, ADD_TODO } from '../actions/actionTypes';
 const initialState = {
     nextTodoId: 0,
     todos: [],
-    text: '',
-    visibilityFilter: 'all'
+    visibilityFilter: 'all',
+    todo: {
+        id: 0,
+        text: '',
+        completed: ''
+    }
 }
 
 export default (state = initialState, action) => {
@@ -14,12 +18,17 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case NEW_TODO:
-            stateCopy.text = action.payload.target.value
+            stateCopy.todo = {
+                id: stateCopy.nextTodoId,
+                text: action.payload.target.value,
+                completed: false
+            }
             break
         case ADD_TODO:
-            let text = stateCopy.text
+            stateCopy.nextTodoId = stateCopy.nextTodoId + 1
+            let todo = stateCopy.todo
             let nextTodoId = stateCopy.nextTodoId
-            const newItem = { text, nextTodoId }
+            const newItem = { todo, nextTodoId }
             stateCopy.todos = [...stateCopy.todos, newItem]
             break
         case VISIBILITY_FILTER:
