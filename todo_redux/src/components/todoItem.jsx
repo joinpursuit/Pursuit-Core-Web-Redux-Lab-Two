@@ -26,10 +26,10 @@ class TodoItem extends React.Component {
             todosArr && todosArr.length
                 ? todosArr.map(item => {
                     return (
-                        <li onClick={() => this.props.toggleTodo()}
-                            className={
-                                !item.todo.completed ? 'todo-item' : "todo-item-completed"
-                            }
+                        <li onClick={() => this.props.toggleTodo(item.todo.id)}
+                            style={{
+                                textDecoration: item.todo.completed ? 'line-through' : 'none'
+                            }}
 
                             key={item.todo.id}
                         >
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleTodo: data => dispatch(toggleTodo()),
+        toggleTodo: data => dispatch(toggleTodo(data)),
 
     }
 }
