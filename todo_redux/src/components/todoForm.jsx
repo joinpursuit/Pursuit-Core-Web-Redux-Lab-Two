@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { newTodo, addTodo } from '../store/actions/todoAction '
+import { addTodo } from '../store/actions/todoAction '
 
-const TodoForm = (props) => {
+class TodoForm extends Component {
+    constructor(props) {
+        super(props)
 
-    return (
-        <form onSubmit={e => {
-            e.preventDefault()
-            props.addTodo()
-        }}>
-            <input type="text" onChange={e => props.newTodo(e.target.value)} placeholder='Enter a Todo' />
-        </form>
-    )
+        this.state = {
+            id: 0,
+            text: '',
+            completed: false
+        }
+    }
+
+    newTodo = e => this.setState({ text: e.target.value })
+
+    render() {
+        return (
+            <form onSubmit={e => {
+                e.preventDefault()
+                this.props.addTodo(this.state)
+            }}>
+                <input type="text" onChange={this.newTodo} placeholder='Enter a Todo' />
+            </form>
+        )
+    }
 
 }
 
@@ -22,7 +35,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        newTodo: data => dispatch(newTodo(data)),
         addTodo: data => dispatch(addTodo(data)),
 
     }

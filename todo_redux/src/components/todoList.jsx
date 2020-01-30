@@ -1,5 +1,5 @@
 
-import React, { memo } from 'react';
+import React from 'react'
 import TodoItem from './todoItem';
 import './todo.css'
 

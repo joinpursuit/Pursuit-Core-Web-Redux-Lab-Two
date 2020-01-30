@@ -19,7 +19,6 @@ class TodoItem extends React.Component {
     }
 
     render() {
-        console.log("rendered", this.props.bool)
         let todosArr = this.props.todoReducer.todos
 
         return (
@@ -29,8 +28,10 @@ class TodoItem extends React.Component {
                     return (
                         <li onClick={() => this.props.toggleTodo()}
                             className={
-                                !item.todo.bool ? 'todo-item' : "todo-item-completed"
+                                !item.todo.completed ? 'todo-item' : "todo-item-completed"
                             }
+
+                            key={item.todo.id}
                         >
                             {item.todo.text}
                         </li >
