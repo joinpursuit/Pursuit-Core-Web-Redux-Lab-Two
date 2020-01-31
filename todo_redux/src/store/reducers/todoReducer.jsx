@@ -30,7 +30,15 @@ export default (state = initialState, action) => {
             })
             break
         case SET_FILTER: {
-            return action.payload.filter;
+            // return action.payload.filter;
+            switch (action.payload.filter) {
+                case 'all':
+                    return stateCopy.todos
+                case 'complete':
+                    return stateCopy.todos.map(el => el.completed === true)
+                default:
+                    break;
+            }
         }
         default:
             break
