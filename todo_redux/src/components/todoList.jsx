@@ -7,16 +7,32 @@ import './todo.css'
 export const TodoList = (props) => {
 
     return (
-        <ul className='list'
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                listStyle: 'none',
-                textAlign: 'left',
-                alignItems: 'center',
-            }}
-        >
-            <TodoItem />
-        </ul>
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}>
+            <div style={{ display: 'inline' }}>
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '500px'
+                }}>
+                    <div className="test" style={{
+                        marginLeft: '-50px',
+                        textAlign: 'left',
+                    }}>
+                        <ul className='list'
+                            style={{
+                                paddingLeft: '50%'
+                            }}
+                        >
+                            <TodoItem />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }

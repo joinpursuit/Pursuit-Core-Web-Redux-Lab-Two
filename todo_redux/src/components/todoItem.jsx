@@ -15,7 +15,8 @@ const TodoItem = (props) => {
                 return (
                     <li onClick={() => props.toggleTodo(item.todo.id)}
                         style={{
-                            textDecoration: item.todo.completed ? 'line-through' : 'none'
+                            textDecoration: item.todo.completed ? 'line-through' : 'none',
+
                         }}
 
                         key={item.todo.id}
@@ -24,7 +25,7 @@ const TodoItem = (props) => {
                     </li >
                 )
             })
-            : 'Enter Task'
+            : null
     )
 }
 
