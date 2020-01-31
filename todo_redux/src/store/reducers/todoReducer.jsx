@@ -29,20 +29,10 @@ export default (state = initialState, action) => {
             })
             break
         case SET_FILTER:
-            console.log('action filter', action.filter);
-            stateCopy.visibilityFilter = action.filter
-
-            // switch (action.payload.filter) {
-            //     case 'all':
-            //         stateCopy.visibilityFilter = action.filter
-            //         return stateCopy.todos
-            //     case 'complete':
-            //         stateCopy.visibilityFilter = action.filter
-            //         return stateCopy.todos.map(el => el.completed === true)
-            //     default:
-            //         break;
-            // }
-            break
+            stateCopy = {
+                ...stateCopy,
+                visibilityFilter: action.filter
+            }
         default:
             break
     }
