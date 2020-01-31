@@ -2,7 +2,6 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { connect } from 'react-redux'
 import { toggleTodo } from '../store/actions/todoAction ';
-import './todo.css'
 
 const TodoItem = (props) => {
 
