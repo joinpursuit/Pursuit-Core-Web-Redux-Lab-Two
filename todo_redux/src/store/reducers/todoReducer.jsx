@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
             })
             break
         case SET_FILTER:
-            stateCopy = {
+            return stateCopy = {
                 ...stateCopy,
                 visibilityFilter: action.filter
             }
