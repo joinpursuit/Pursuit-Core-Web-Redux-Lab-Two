@@ -1,10 +1,10 @@
 
-import { SET_FILTER, ADD_TODO, TOGGLE_COMPLETE } from '../actions/actionTypes';
+import { SET_FILTER, ADD_TODO, TOGGLE_COMPLETE, VISIBILITY_FILTERS } from '../actions/actionTypes';
 
 const initialState = {
     nextTodoId: 1,
     todos: [],
-    visibilityFilter: 'all'
+    visibilityFilter: VISIBILITY_FILTERS.ALL
 }
 
 export default (state = initialState, action) => {

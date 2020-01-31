@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../store/actions/todoAction '
+import { Visibility } from '../container/setVisibility'
 
 class TodoForm extends Component {
     constructor(props) {
@@ -22,16 +23,8 @@ class TodoForm extends Component {
             }}>
                 <input type="text" onChange={this.newTodo} placeholder='Enter a Todo' />
                 <button>Add Todo</button>
-
                 {this.props.children}
-
-                <div className='visibilityFilters'>
-                    <p>Show:
-                    <button>All</button>
-                        <button>Active</button>
-                        <button>Incomplete</button>
-                    </p>
-                </div>
+                <Visibility />
             </form>
         )
     }
@@ -40,13 +33,14 @@ class TodoForm extends Component {
 
 
 const mapStateToProps = (state) => {
-    return state
+    return {
+        todoReducer: state.todos
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         addTodo: data => dispatch(addTodo(data)),
-
     }
 }
 
