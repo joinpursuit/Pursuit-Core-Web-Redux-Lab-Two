@@ -13,16 +13,17 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_TODO:
-            let todo = action.text
+            let todo = action.payload
             todo.id = stateCopy.nextTodoId
+            todo.completed = false
             stateCopy.nextTodoId = stateCopy.nextTodoId + 1
 
             const newItem = { todo }
             stateCopy.todos = [...stateCopy.todos, newItem]
             break
+
         case TOGGLE_COMPLETE:
             stateCopy.todos.map(el => {
-                console.log('ellll', el.todo)
                 return (
                     el.todo.id === action.id ? el.todo.completed = !el.todo.completed : null
                 )

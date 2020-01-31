@@ -1,10 +1,10 @@
-import { VISIBILITY_FILTER, ADD_TODO, TOGGLE_COMPLETE, SET_FILTER } from "./actionTypes";
+import { ADD_TODO, TOGGLE_COMPLETE, SET_FILTER } from "./actionTypes";
 
 
-export const addTodo = (text) => {
+export const addTodo = (payload) => {
     return {
         type: ADD_TODO,
-        text
+        payload
     };
 };
 

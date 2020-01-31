@@ -9,7 +9,6 @@ class TodoForm extends Component {
         this.state = {
             id: 0,
             text: '',
-            completed: false
         }
     }
 
@@ -22,6 +21,17 @@ class TodoForm extends Component {
                 this.props.addTodo(this.state)
             }}>
                 <input type="text" onChange={this.newTodo} placeholder='Enter a Todo' />
+                <button>Add Todo</button>
+
+                {this.props.children}
+
+                <div className='visibilityFilters'>
+                    <p>Show:
+                    <button>All</button>
+                        <button>Active</button>
+                        <button>Incomplete</button>
+                    </p>
+                </div>
             </form>
         )
     }
