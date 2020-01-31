@@ -1,10 +1,10 @@
 
-import { SET_FILTER, ADD_TODO, TOGGLE_COMPLETE, VISIBILITY_FILTERS } from '../actions/actionTypes';
+import { SET_FILTER, ADD_TODO, TOGGLE_COMPLETE } from '../actions/actionTypes';
 
 const initialState = {
     nextTodoId: 1,
     todos: [],
-    visibilityFilter: VISIBILITY_FILTERS.ALL
+    visibilityFilter: 'all'
 }
 
 export default (state = initialState, action) => {
@@ -21,7 +21,6 @@ export default (state = initialState, action) => {
             const newItem = { todo }
             stateCopy.todos = [...stateCopy.todos, newItem]
             break
-
         case TOGGLE_COMPLETE:
             stateCopy.todos.map(el => {
                 return (
@@ -29,17 +28,21 @@ export default (state = initialState, action) => {
                 )
             })
             break
-        case SET_FILTER: {
-            // return action.payload.filter;
-            switch (action.payload.filter) {
-                case 'all':
-                    return stateCopy.todos
-                case 'complete':
-                    return stateCopy.todos.map(el => el.completed === true)
-                default:
-                    break;
-            }
-        }
+        case SET_FILTER:
+            console.log('action filter', action.filter);
+            stateCopy.visibilityFilter = action.filter
+
+            // switch (action.payload.filter) {
+            //     case 'all':
+            //         stateCopy.visibilityFilter = action.filter
+            //         return stateCopy.todos
+            //     case 'complete':
+            //         stateCopy.visibilityFilter = action.filter
+            //         return stateCopy.todos.map(el => el.completed === true)
+            //     default:
+            //         break;
+            // }
+            break
         default:
             break
     }

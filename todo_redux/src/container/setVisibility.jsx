@@ -6,7 +6,6 @@ import { VISIBILITY_FILTERS } from '../store/actions/actionTypes'
 
 export const Visibility = (props) => {
 
-
     return (
         <form onSubmit={e => e.preventDefault()}>
             <div className='visibilityFilters'>
@@ -15,18 +14,9 @@ export const Visibility = (props) => {
                         Object.keys(VISIBILITY_FILTERS).map(filter => {
                             const currentFilter = VISIBILITY_FILTERS[filter];
                             console.log(currentFilter);
-
                             return (
-                                <span
-                                    key={currentFilter}
-                                    onClick={() => setFilter(currentFilter)}
-                                    style={{
-                                        color: currentFilter === props.activeFilter ? 'grey' : 'black'
-                                    }}
-                                >
-                                    {' '}
-                                    {currentFilter}
-                                </span>
+                                <button key={currentFilter}
+                                    onClick={() => props.setFilter(currentFilter)}> {currentFilter}</button>
                             )
                         })
                     }
@@ -39,7 +29,7 @@ export const Visibility = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        activeFilter: state.VisibilityFilter
+        todoReducer: state.visibilityFilter
     }
 }
 

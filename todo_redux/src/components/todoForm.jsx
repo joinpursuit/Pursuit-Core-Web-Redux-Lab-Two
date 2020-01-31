@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../store/actions/todoAction '
-import { Visibility } from '../container/setVisibility'
 
 class TodoForm extends Component {
     constructor(props) {
@@ -23,8 +22,8 @@ class TodoForm extends Component {
             }}>
                 <input type="text" onChange={this.newTodo} placeholder='Enter a Todo' />
                 <button>Add Todo</button>
-                {this.props.children}
-                <Visibility />
+
+
             </form>
         )
     }
