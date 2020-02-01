@@ -8,14 +8,6 @@ const TodoItem = (props) => {
     let visFilter = props.todoReducer.visibilityFilter
     let displayArr;
 
-
-    // if (visFilter === 'all') {
-    //     displayArr = todosArr
-    // } else if (visFilter === 'completed') {
-    //     displayArr = todosArr.filter(el => el.todo.completed === true)
-    // } else if (visFilter === 'incomplete') {
-    //     displayArr = todosArr.filter(el => el.todo.completed === false)
-    // }
     switch (visFilter) {
         case 'all':
             displayArr = todosArr
