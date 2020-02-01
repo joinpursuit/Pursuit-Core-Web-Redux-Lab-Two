@@ -4,12 +4,23 @@ import { toggleTodo } from '../store/actions/todoAction ';
 
 const TodoItem = (props) => {
 
-    let todosArr = props.todoReducer.todos
+    let todosArr = props.todoReducer.todos;
+    let visFilter = props.todoReducer.visibilityFilter
+    let displayArr;
+
+
+    if (visFilter === 'all') {
+        displayArr = todosArr
+    } else if (visFilter === 'completed') {
+        displayArr = todosArr.filter(el => el.todo.completed === true)
+    } else if (visFilter === 'incomplete') {
+        displayArr = todosArr.filter(el => el.todo.completed === false)
+    }
 
     return (
 
-        todosArr && todosArr.length
-            ? todosArr.map(item => {
+        displayArr && displayArr.length
+            ? displayArr.map(item => {
                 return (
                     <li onClick={() => props.toggleTodo(item.todo.id)}
                         style={{

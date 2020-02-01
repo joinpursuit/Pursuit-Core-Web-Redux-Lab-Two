@@ -33,21 +33,6 @@ export default (state = initialState, action) => {
                 ...stateCopy,
                 visibilityFilter: action.filter
             }
-
-            let backUP = stateCopy.todos
-            switch (action.filter) {
-                case 'all':
-                    stateCopy.todos = backUP
-                    break;
-                case 'completed':
-                    stateCopy.todos = stateCopy.todos.filter(el => el.todo.completed === true)
-                    break;
-                case 'incomplete':
-                    stateCopy.todos = stateCopy.todos.filter(el => el.todo.completed === false)
-                    break;
-                default:
-                    break;
-            }
             break
         default:
             break
