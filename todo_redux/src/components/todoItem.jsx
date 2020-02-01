@@ -5,10 +5,9 @@ import { toggleTodo } from '../store/actions/todoAction ';
 const TodoItem = (props) => {
 
     let todosArr = props.todoReducer.todos;
-    let visFilter = props.todoReducer.visibilityFilter
     let displayArr;
 
-    switch (visFilter) {
+    switch (props.todoReducer.visibilityFilter) {
         case 'all':
             displayArr = todosArr
             break;
