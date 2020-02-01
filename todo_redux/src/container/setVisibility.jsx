@@ -15,7 +15,8 @@ export const Visibility = (props) => {
                             const currentFilter = VISIBILITY_FILTERS[filter];
                             return (
                                 <button key={currentFilter}
-                                    onClick={() => props.setFilter(currentFilter)}>
+                                    onClick={() => props.setFilter(currentFilter)}
+                                >
                                     {currentFilter}
                                 </button>
                             )
