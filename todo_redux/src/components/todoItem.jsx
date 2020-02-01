@@ -9,12 +9,25 @@ const TodoItem = (props) => {
     let displayArr;
 
 
-    if (visFilter === 'all') {
-        displayArr = todosArr
-    } else if (visFilter === 'completed') {
-        displayArr = todosArr.filter(el => el.todo.completed === true)
-    } else if (visFilter === 'incomplete') {
-        displayArr = todosArr.filter(el => el.todo.completed === false)
+    // if (visFilter === 'all') {
+    //     displayArr = todosArr
+    // } else if (visFilter === 'completed') {
+    //     displayArr = todosArr.filter(el => el.todo.completed === true)
+    // } else if (visFilter === 'incomplete') {
+    //     displayArr = todosArr.filter(el => el.todo.completed === false)
+    // }
+    switch (visFilter) {
+        case 'all':
+            displayArr = todosArr
+            break;
+        case 'completed':
+            displayArr = todosArr.filter(el => el.todo.completed === true)
+            break;
+        case 'incomplete':
+            displayArr = todosArr.filter(el => el.todo.completed === false)
+            break;
+        default:
+            break;
     }
 
     return (
