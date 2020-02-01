@@ -1,0 +1,5 @@
+export const ADD_TODOS = 'ADD_TODOS'
+export const TOGGLE_TODOS = 'TOGGLE TODOS'
+export const VISIBILITY_FILTER = 'VISIBILITY FILTER'
+
+
