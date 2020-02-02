@@ -7,13 +7,15 @@ const initialState = {
 }
 
 const addTodo = (state = initialState, action) => {
-
+    console.log("Action Things", action)
     const stateCopy = { ...state }
 
     switch (action.type) {
         case ADD_TODO:
+            console.log("Action Things", action.payload.text)
             stateCopy.nextTodoId = stateCopy.nextTodoId + 1
-            stateCopy.todos = action.payload
+            stateCopy.todos.push(action.payload.text)
+            // console.log("stateCopy", stateCopy)
             break;
 
         default:

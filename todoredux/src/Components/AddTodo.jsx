@@ -5,8 +5,10 @@ import { ADD_TODO } from '../Store/ActionTypes'
 
 
 const AddTodo = (props) => {
-
+    console.log("Starting props", props.todoState.todos)
     const [input, setInput] = useState("");
+    const [todos, setTodos] = useState([]);
+
 
     const updateInput = (input) => {
         setInput(input)
@@ -21,12 +23,13 @@ const AddTodo = (props) => {
     // }
 
     const handleAddTodo = () => {
-        props.handleAddTodo()
+        props.handleAddTodo(props.todoState.nextTodoId, input)
+        setTodos(props.todoState.todos)
 
         console.log('works')
     };
 
-
+    console.log('todos', todos)
     return (
         <div>
             <input
@@ -36,6 +39,16 @@ const AddTodo = (props) => {
             <button className="add-todo" onClick={handleAddTodo}>
                 Add Todo
         </button>
+
+            <ul>
+                {todos.map(todo => {
+                    return (
+                        <li value={todo}>
+                            {todo}
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     );
 }
@@ -49,13 +62,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleAddTodo: (nextTodoId, todos) => {
-            console.log('Dispatch Stuff', todos)
+        handleAddTodo: (nextTodoId, input) => {
+            console.log('Dispatch Stuff', nextTodoId)
             dispatch({
                 type: ADD_TODO,
                 payload: {
                     id: nextTodoId,
-                    text: todos,
+                    text: input,
                     completed: false
                 }
             })

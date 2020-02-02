@@ -4,7 +4,7 @@ const initialState = {
 }
 
 const counterReducer = (state = initialState, action) => {
-  console.log('counterReducer running', action);
+  console.log('counterReducer running ', action);
 
   const stateCopy = { ...state } // Making a copy current state
 
