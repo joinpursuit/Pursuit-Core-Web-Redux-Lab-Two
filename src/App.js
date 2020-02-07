@@ -7,7 +7,7 @@ App MAIN | Todos a la Redux | React Redux Two Lab
     // external imports
     import React from 'react';
 
-    // local imports
+    // local
     // import './App.css';
 
     import AddForm from './components/AddForm';
