@@ -1,7 +1,7 @@
 # Pursuit-Core-Web-Redux-Lab-Two
 
 ## App
-![ReduxToDos](./ReduxToDos.gif)
+![ReduxToDos](./readme/ReduxToDos.gif)
 
 
 ### Specification
