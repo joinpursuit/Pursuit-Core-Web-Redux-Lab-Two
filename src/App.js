@@ -7,7 +7,7 @@ App MAIN | Todos a la Redux | React Redux Two Lab
 // EXTERNALS - LOCALS
 import React from 'react';
 
-// import './App.css';
+import './App.css';
 import AddForm from './components/AddForm';
 import VisibilitySwitch from './components/VisibilitySwitch';
 import TodosList from './components/TodosList';

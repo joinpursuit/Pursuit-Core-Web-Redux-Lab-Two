@@ -7,13 +7,13 @@ VisibilitySwitch Component | Todos a la Redux | React Redux Two Lab
 // EXTERNALS - LOCALS
 import React from 'react';
 
-// import './VisibilitySwitch.css';
+import './VisibilitySwitch.css';
 
 
 // MAIN
 const VisibilitySwitch = () => {
   return (
-    <div>
+    <div className="visibility-switch">
       VisibilitySwitch component
     </div>
   );

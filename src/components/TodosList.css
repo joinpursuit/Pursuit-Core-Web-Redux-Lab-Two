@@ -1,0 +1,13 @@
+/*
+Joseph P. Pasaoa
+TodosList Component CSS | Todos a la Redux | React Redux Two Lab
+*/
+
+
+ul {
+  height: inherit;
+  width: -webkit-fill-available;
+  margin: 0px;
+  padding: 15px 9px 20px 99px;
+  background-color: aliceblue;
+}

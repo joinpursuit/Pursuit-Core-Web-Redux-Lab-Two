@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { ADD_TODO } from '../redux/actionTypes';
-// import './AddForm.css';
+import './AddForm.css';
 
 
 const AddForm = (props) => {

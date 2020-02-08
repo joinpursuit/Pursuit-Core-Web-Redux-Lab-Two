@@ -8,7 +8,7 @@ TodosList Component | Todos a la Redux | React Redux Two Lab
 import React from 'react';
 import { connect } from 'react-redux';
 
-// import './TodosList.css';
+import './TodosList.css';
 
 
 // MAIN
