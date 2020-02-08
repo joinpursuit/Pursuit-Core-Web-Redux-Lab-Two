@@ -25,18 +25,27 @@ const AddForm = (props) => {
     const submission = todoTxt;
     if (submission === "" || submission.trim() === "") {
       setErrorMsg("Please enter a valid ToDo and submit again");
+      refTodoTxt.current.focus();
     } else {
-      setErrorMsg("");
       props.addTodo(todoTxt);
+      setErrorMsg("");
+      setTodoTxt("");
+      refTodoTxt.current.blur();
     }
-    refTodoTxt.current.focus();
   }
 
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={todoTxt} onChange={handleChange} name="todoTxt" placeholder="What needs doing?" ref={refTodoTxt} />
+        <input
+          type="text"
+          value={todoTxt}
+          onChange={handleChange}
+          name="todoTxt"
+          placeholder="What needs doing?"
+          ref={refTodoTxt}
+        />
         <button type="submit">Submit</button>
       </form>
       <p className="error-msg">{errorMsg}</p>

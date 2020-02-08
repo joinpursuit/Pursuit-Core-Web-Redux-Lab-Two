@@ -13,6 +13,6 @@ import uiReducer from './reducers/uiReducer';
 
 // COMBINEREDUCERS
 export default combineReducers({ 
-  todos: todosReducer,
-  ui: uiReducer
+  todosState: todosReducer,
+  uiState: uiReducer
 });
