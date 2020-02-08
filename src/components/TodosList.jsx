@@ -16,7 +16,7 @@ import TodoCard from './TodoCard';
 const TodosList = ({ todos }) => {
   let listTodos = null;
   if (todos.length) {
-    listTodos = todos.map(todo => {
+    listTodos = todos.filter(el => !!el).map(todo => {
         return (
           <TodoCard
             key={todo.id}

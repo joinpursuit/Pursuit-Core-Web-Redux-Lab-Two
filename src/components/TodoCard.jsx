@@ -24,7 +24,7 @@ const TodoCard = ({ id, text, completed, dispatch }) => {
 }
 
 
-// CONNECT
+// IMPORTANT: this mapState function is needed to trigger re-render on change
 const mapStateToProps = (state, ownProps) => {
   return ({
     completed: state.todosState.todos[ownProps.id].completed

@@ -31,7 +31,6 @@ const todosReducer = (state = INITIAL_STATE, action) => {
     case TOGGLE_COMPLETED:
       const targetTodo = newState.todos[action.payload.todoId];
       targetTodo.completed = !targetTodo.completed;
-      console.log(newState);
       break;
     default:
       break;
