@@ -4,18 +4,17 @@ TodosList Component | Todos a la Redux | React Redux Two Lab
 */
 
 
-    // external imports
-    import React from 'react';
+// EXTERNALS - LOCALS
+import React from 'react';
 
-    // local
-    // import './TodosList.css';
+// import './TodosList.css';
 
 
+// MAIN
 const TodosList = () => {
-
   return (
     <div>
-
+      TodosList component
     </div>
   );
 }

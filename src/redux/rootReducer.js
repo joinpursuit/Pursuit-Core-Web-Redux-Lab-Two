@@ -1,5 +1,18 @@
+/*
+Joseph P. Pasaoa
+Redux Root Reducer | Todos a la Redux | React Redux Two Lab
+*/
+
+
+// EXTERNALS - LOCALS
 import { combineReducers } from 'redux';
 
-import todoReducer from './todo/todoReducer';
+import todosReducer from './reducers/todosReducer';
+import uiReducer from './reducers/uiReducer';
 
-export default combineReducers({ todoReducer });
+
+// COMBINEREDUCERS
+export default combineReducers({ 
+  todos: todosReducer,
+  ui: uiReducer
+});

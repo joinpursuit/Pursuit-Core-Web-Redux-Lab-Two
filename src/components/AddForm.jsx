@@ -4,20 +4,17 @@ AddForm Component | Todos a la Redux | React Redux Two Lab
 */
 
 
-    // external imports
-    import React, { useState } from 'react';
-    import { connect } from 'react-redux';
-    
-    // local
-    import { ADD_TODO } from '../redux/actionTypes';
-    // import './AddForm.css';
+// EXTERNALS - LOCALS
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+
+import { ADD_TODO } from '../redux/actionTypes';
+// import './AddForm.css';
 
 
 const AddForm = (props) => {
-
   const [ todoTxt, setTodoTxt ] = useState("");
   const [ errorMsg, setErrorMsg ] = useState("");
-
   const refTodoTxt = React.createRef();
 
 
@@ -30,7 +27,7 @@ const AddForm = (props) => {
       setErrorMsg("Please enter a valid ToDo and submit again");
     } else {
       setErrorMsg("");
-      props.addTodo(submission);
+      props.addTodo(todoTxt);
     }
     refTodoTxt.current.focus();
   }
@@ -50,11 +47,13 @@ const AddForm = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTodo: (todoTxt)=> {
+    addTodo: (entry) => {
       dispatch({
         type: ADD_TODO,
-        payload: todoTxt
-      })
+        payload: {
+          todoTxt: entry
+        }
+      });
     }
   }
 }
