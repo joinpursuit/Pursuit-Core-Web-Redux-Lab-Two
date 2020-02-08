@@ -12,6 +12,7 @@ import { ADD_TODO } from '../redux/actionTypes';
 import './AddForm.css';
 
 
+// MAIN
 const AddForm = (props) => {
   const [ todoTxt, setTodoTxt ] = useState("");
   const [ errorMsg, setErrorMsg ] = useState("");
@@ -54,6 +55,7 @@ const AddForm = (props) => {
 }
 
 
+// CONNECT-MAPS
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (entry) => {
