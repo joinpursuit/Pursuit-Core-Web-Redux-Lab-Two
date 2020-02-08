@@ -9,13 +9,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './TodosList.css';
+import TodoCard from './TodoCard';
 
 
 // MAIN
 const TodosList = ({ todos }) => {
   let listTodos = null;
   if (todos.length) {
-    listTodos = todos.map(todo => <li key={todo.id}>{todo.text}</li>);
+    listTodos = todos.map(todo => {
+        return (
+          <TodoCard
+            key={todo.id}
+            id={todo.id}
+            text={todo.text}
+            completed={todo.completed}
+          />
+        );
+    });
   }
   return (
     <ul>

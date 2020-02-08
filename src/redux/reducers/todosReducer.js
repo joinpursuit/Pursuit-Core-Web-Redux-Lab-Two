@@ -5,7 +5,7 @@ Redux Todos Reducer | Todos a la Redux | React Redux Two Lab
 
 
 // EXTERNALS - LOCALS
-import { ADD_TODO, TOGGLE_TODO } from '../actionTypes';
+import { ADD_TODO, TOGGLE_COMPLETED } from '../actionTypes';
 
 
 const INITIAL_STATE = {
@@ -28,8 +28,10 @@ const todosReducer = (state = INITIAL_STATE, action) => {
       ];
       newState.nextId += 1;
       break;
-    case TOGGLE_TODO:
-      console.log("toggled todo");
+    case TOGGLE_COMPLETED:
+      const targetTodo = newState.todos[action.payload.todoId];
+      targetTodo.completed = !targetTodo.completed;
+      console.log(newState);
       break;
     default:
       break;

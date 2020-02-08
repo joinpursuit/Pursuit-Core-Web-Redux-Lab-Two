@@ -4,10 +4,21 @@ TodosList Component CSS | Todos a la Redux | React Redux Two Lab
 */
 
 
+ul, li {
+  list-style: none;
+}
+
 ul {
   height: inherit;
   width: -webkit-fill-available;
   margin: 0px;
-  padding: 15px 9px 20px 99px;
+  padding: 15px 9px 20px 73px;
   background-color: aliceblue;
+}
+
+li {
+  height: 1.5em;
+  max-width: max-content;
+  padding: 1px 28px 1px 16px;
+  margin: 0px;
 }
