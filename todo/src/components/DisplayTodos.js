@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { completeTodo } from "../actions/todoActions";
-import { todoVisibility } from "../actions/todoActions";
+import VisibilityButtons from "./VisibilityButtons";
 
 const DisplayTodos = () => {
   const todoList = useSelector((state) => Object.values(state.toDos));
@@ -13,11 +13,6 @@ const DisplayTodos = () => {
     e.preventDefault();
     let id = e.currentTarget.id;
     dispatch(completeTodo(id));
-  };
-
-  const handleVisibility = (e) => {
-    e.preventDefault();
-    dispatch(todoVisibility(e.currentTarget.value));
   };
 
   const filterVisibility = () => {
@@ -60,29 +55,7 @@ const DisplayTodos = () => {
 
   return (
     <>
-      <button
-        type="onClick"
-        value="ALL"
-        onClick={(e) => {
-          handleVisibility(e);
-        }}
-      >
-        All
-      </button>
-      <button
-        type="onClick"
-        value="ACTIVE"
-        onClick={(e) => handleVisibility(e)}
-      >
-        Active
-      </button>
-      <button
-        type="onClick"
-        value="COMPLETE"
-        onClick={(e) => handleVisibility(e)}
-      >
-        Completed
-      </button>
+      <VisibilityButtons />
       <ul>{filterVisibility()}</ul>
     </>
   );
