@@ -1,10 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from "./actionTypes";
+import { ADD_TODO 
+  // , TOGGLE_TODO
+  //, SET_VISIBILITY_FILTER 
+} from "./actionTypes";
 
-export const addTodo = (todoList) => {
+export const createTodo = (todo) => {
   return {
     type: ADD_TODO,
-    payload: {
-      text: 'Do something.'  
-    }
+    payload: todo
   }
 }
