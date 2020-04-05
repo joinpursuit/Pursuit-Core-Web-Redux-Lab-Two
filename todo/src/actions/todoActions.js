@@ -18,7 +18,7 @@ export const completeTodo = (id) => {
   };
 };
 
-export const todoVisibity = (filter) => {
+export const todoVisibility = (filter) => {
   return {
     type: VISIBILITY_FILTER,
     payload: filter,
