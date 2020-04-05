@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>ToDo App</h1>
       <ToDoForm />
-      <ToDoList/> 
+      <ToDoList /> 
     </div>
   );
 }
