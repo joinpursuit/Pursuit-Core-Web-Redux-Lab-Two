@@ -4,7 +4,7 @@ import { createTodo } from "../actions/todoActions";
 let autoId = 3;
 
 const AddTodo = () => {
-	const [input, setInput] = useState("");
+	const [text, setText] = useState("");
 	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
@@ -12,19 +12,19 @@ const AddTodo = () => {
 		dispatch(
 			createTodo({
 				id: autoId++,
-				input,
+				text,
 			})
 		);
-		setInput("");
+		setText("");
 	};
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
 				<input
 					placeholder="todo"
-					text="text"
-					value={input}
-					onChange={(e) => setInput(e.target.value)}
+			    type="text"
+					value={text}
+					onChange={(e) => setText(e.target.value)}
 				/>
 				<button>Add Todo</button>
 			</form>
