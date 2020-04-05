@@ -1,5 +1,4 @@
 const { ADD_ITEM } = require('../actions/todoAction');
-// import { Reducer } from 'redux';
 
 const todoReducer = (state = {}, action) => {
     switch (action.type) {
