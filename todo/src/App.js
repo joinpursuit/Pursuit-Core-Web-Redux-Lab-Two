@@ -1,5 +1,5 @@
 import React from "react";
-// import "./App.css";
+import "./App.css";
 import CreateTodo from "./components/CreateTodo";
 import DisplayTodos from "./components/DisplayTodos";
 

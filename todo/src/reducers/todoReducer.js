@@ -7,12 +7,12 @@ const todoReducer = (state = _defaultState, action) => {
 
   switch (action.type) {
     case ADD_TODO:
-      let newTodo = { ...action.payload };
+      let newTodo = { ...action.payload, completed: false };
       newState[newTodo.id] = newTodo;
       return newState;
     case COMPLETE_TODO:
       let toDoItem = newState[action.payload];
-      toDoItem[toDoItem.completed] = true;
+      toDoItem.completed = true;
       return newState;
     default:
       return newState;
