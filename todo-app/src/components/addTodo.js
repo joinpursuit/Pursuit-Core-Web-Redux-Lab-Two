@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../actions/todoActions";
+let autoId = 3;
 
 const AddTodo = () => {
 	const [input, setInput] = useState("");
@@ -8,7 +9,13 @@ const AddTodo = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(createTodo(input));
+		dispatch(
+			createTodo({
+				id: autoId++,
+				input,
+			})
+		);
+		setInput("");
 	};
 	return (
 		<div>

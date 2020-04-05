@@ -1,4 +1,4 @@
-import ADD_TODO from "../actions/actionTypes"
+import { ADD_TODO } from "../actions/actionTypes"
 
 const _defaultState ={}
 const todoReducer = (state = _defaultState, action) => {
