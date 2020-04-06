@@ -1,6 +1,8 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
+import {idSequence, addToDo} from '../Actions/todoActions'
+
 import Input from './Input'
 import {useInput} from '../Utilities/CustomHookery'
 
@@ -13,7 +15,9 @@ const TodoForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(input)
+        dispatch({
+            id: 
+        })
         input.clearInput()
     }
 
@@ -26,3 +30,10 @@ const TodoForm = () => {
 }
 
 export default TodoForm;
+
+
+// {
+//     id: 1,
+//     text: "Buy groceries",
+//     completed: boolean
+//   }

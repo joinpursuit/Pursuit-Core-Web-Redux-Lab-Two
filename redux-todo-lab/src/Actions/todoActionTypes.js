@@ -1,0 +1,5 @@
+const ADDTODO = "ADDTODO"
+const DOTODO = "DOTODO"
+const FILTERTODO = "FILTERTODO"
+
+export default {ADDTODO, DOTODO, FILTERTODO}
