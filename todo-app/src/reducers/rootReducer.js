@@ -1,4 +1,4 @@
-import todoReducer from '../reducers/addTodoReducer';
+import todoReducer from './todoReducer';
 
 import { combineReducers } from 'redux';
 

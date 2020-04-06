@@ -1,15 +1,16 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actions/actionTypes"
+import { ADD_TODO } from "../actions/actionTypes";
+
 const _defaultState = {};
 const todoReducer = (state = _defaultState, action) => {
-  Object.freeze(state);
-  const newState = { ...state };
-  switch (action.type) {
-    case ADD_TODO:
-      return [...state, action.payload]
-    case TOGGLE_TODO:
-      return [];
-    default:
-      return state;
-  }
-}
+	Object.freeze(state);
+	const newState = { ...state };
+	switch (action.type) {
+		case ADD_TODO:
+			let todo = { ...action.payload, completed: false };
+			newState[todo.id] = todo;
+			return newState;
+		default:
+			return state;
+	}
+};
 export default todoReducer;
