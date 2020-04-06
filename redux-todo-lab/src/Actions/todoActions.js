@@ -1,6 +1,12 @@
-import {ADDTODO, DOTODO, FILTERTODO} from './todoActionTypes'
+import {IDSEQ, ADDTODO, DOTODO, FILTERTODO} from './todoActionTypes'
 
-const addTodo = (todo) => {
+const idSequence = () => {
+    return {
+        type: IDSEQ
+    }
+}
+
+const addToDo = (todo) => {
     return {
         type: ADDTODO,
         payload: todo //todo Object
@@ -8,5 +14,15 @@ const addTodo = (todo) => {
 }
 
 const doToDo = (id) => {
-    return 
+    return {
+        type: DOTODO,
+        payload: id
+    }
+}
+
+const filterToDo = (filter=null) => {
+    return {
+        type: FILTERTODO,
+        payload: filter
+    }
 }
