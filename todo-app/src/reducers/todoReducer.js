@@ -4,6 +4,7 @@ const _defaultState = {};
 const todoReducer = (state = _defaultState, action) => {
 	Object.freeze(state);
 	const newState = { ...state };
+	
 	switch (action.type) {
 		case ADD_TODO:
 			let todo = { ...action.payload, completed: false };
