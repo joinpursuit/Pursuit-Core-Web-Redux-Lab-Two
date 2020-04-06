@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../actions/todoActions";
-let autoId = 0;
+let autoId = 1;
 
 const AddTodo = () => {
 	const [text, setText] = useState("");
