@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {addToDo} from '../actions/toDoAction.js'
+import {addToDo, clearToDo} from '../actions/toDoAction.js'
 
 const toDo = ()=>{
 const [input, setInput] = useState("")
@@ -15,16 +15,15 @@ return (
     <>
     <div>
 add a To do
-<form onSubmit ={handleSubmit}>
+
 <input placeholder = "toDo"
 type ="text"
 value={input}
 onChange={(e)=> setInput(e.target.value)}/>
 
 
-</form>
-
-
+<button onClick={() => addTodo(state)}>Add Todo</button>
+<button onClick={() => clearToDo(id)}>clearToDo  Todo</button>
 
     </div>
 
