@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux' 
 
-import todoReducer from 
+import todoReducer from '../Reducers/todoReducer'
+import idReducer from '../Reducers/idReducer'
+import filterReducer from  '../Reducers/filterReducer'
 
-const rootReducer = ({
+const rootReducer = combineReducers({
     id: idReducer,
     todo: todoReducer,
     filter: filterReducer
