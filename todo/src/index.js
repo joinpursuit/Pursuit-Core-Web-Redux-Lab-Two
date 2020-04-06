@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
+import { addTodo } from './Actions/todoActions'
+import store from './Store/store'
 
-import Store from './Store/Store'
+window.addTodo = addTodo;
+window.store = store;
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider Store={Store}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
