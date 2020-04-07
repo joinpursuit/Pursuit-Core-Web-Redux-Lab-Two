@@ -7,8 +7,10 @@ export const addToDo = (todo) =>{
     }
 }
 
-export const clearToDo = ()=>{
+export const clearToDo = (id)=>{
     return{
-        type:CLEAR_TODO
+        type:CLEAR_TODO,
+        payload: id
+
     }
 }

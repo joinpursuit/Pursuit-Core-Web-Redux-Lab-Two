@@ -1,13 +1,18 @@
 import {ADD_TODO, CLEAR_TODO} from '../actions/actionTypes'
-const toDoReducer =(state, action)=>{
+
+const _defaultState ={}
+const toDoReducer =(state=[], action)=>{
+    Object.freeze(state)
     switch(action.type){
         case ADD_TODO:
-            break;
+            let newToDo = [...state, ...action.payload]
+        
         case CLEAR_TODO:
-            break;
+            return [];
             default:
                 break
     }
 }
+
 
 export default toDoReducer;
