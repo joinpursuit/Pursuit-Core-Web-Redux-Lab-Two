@@ -1,8 +1,16 @@
-import {ADD_TODO} from './ActionTypes';
+import { ADD_TODO } from "./ActionTypes";
 
-export const addTodo = (item) =>{
-    return{
-        type: ADD_TODO,
-        payload: item
+
+let idItem = 0
+export const addTodo = (item) => {
+  return {
+    type: ADD_TODO,
+    payload: {
+        id: idItem++,
+        item,
     }
-}
+  };
+};
+
+
+

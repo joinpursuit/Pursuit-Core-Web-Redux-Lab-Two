@@ -1,5 +1,6 @@
-import {createStore} from 'react-redux';
+import { createStore } from "redux";
+import RootReducer from "../Reducers/RootReducer";
 
-const Store = creatStore()
+const Store = createStore(RootReducer);
 
-export default Store
+export default Store;
