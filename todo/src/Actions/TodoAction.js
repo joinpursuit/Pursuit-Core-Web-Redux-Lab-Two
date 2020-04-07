@@ -1,7 +1,6 @@
-import { ADD_TODO } from "./ActionTypes";
+import { ADD_TODO, COMPLETE_TODO } from "./ActionTypes";
 
 let idItem = 0;
-
 export const addTodo = (item) => {
   return {
     type: ADD_TODO,
@@ -11,3 +10,10 @@ export const addTodo = (item) => {
     },
   };
 };
+
+export const completeTodo = (id) =>{
+  return{
+    type: COMPLETE_TODO,
+    payload: id
+  }
+}
