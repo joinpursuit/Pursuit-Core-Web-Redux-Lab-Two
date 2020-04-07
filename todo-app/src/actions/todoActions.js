@@ -1,6 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO
-  //, SET_VISIBILITY_FILTER 
-} from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO } from "./actionTypes";
 
 export const createTodo = (todo) => {
   return {
@@ -15,3 +13,10 @@ export const markComplete = (id) => {
     payload: id
   }
 }
+
+// export const filterTodo = (id) => {
+//   return {
+//     type: SET_FILTER,
+//     payload: id
+//   }
+// }

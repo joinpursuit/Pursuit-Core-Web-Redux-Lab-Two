@@ -12,7 +12,7 @@ const todoReducer = (state = _defaultState, action) => {
 			return newState;
 		case TOGGLE_TODO:
 			let todoComplete = newState[action.payload];
-			todoComplete.completed = true;
+			todoComplete.completed =!todoComplete.completed 
 			return newState;
 		default:
 			return state;

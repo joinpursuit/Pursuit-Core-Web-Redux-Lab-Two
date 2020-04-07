@@ -13,6 +13,7 @@ const DisplayTodos = () => {
     dispatch(markComplete(e.currentTarget.value))
   }
 
+ 
   return (
     <ul>
       {allTodos.map((todo) => {
