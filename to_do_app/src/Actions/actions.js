@@ -4,7 +4,7 @@ let nextTodo = 0;
 
 export const addToDo = item => ({
   type: ADD_TODO,
-  payload: { id: nextTodo++, item }
+    payload: item
 });
 
 export const toggleToDo = id => ({
