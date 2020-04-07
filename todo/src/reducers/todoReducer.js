@@ -1,4 +1,4 @@
-import { ADD_ITEM } from '../actions/actionTypes';
+import { ADD_ITEM, IS_COMPLETE } from '../actions/actionTypes';
 
 const todoReducer = (state = [], action) => {
     switch (action.type) {
@@ -8,6 +8,10 @@ const todoReducer = (state = [], action) => {
                 completed: false
             }
             return [todo, ...state]
+        case IS_COMPLETE:
+            let completeItem = state[action.payload]
+            completeItem.completed =!completeItem.completed
+            return state
         default:
             return state; 
     }
