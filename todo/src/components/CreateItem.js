@@ -11,7 +11,8 @@ const CreateItem = () => {
         e.preventDefault()
         let newTodo = {id: itemId++,
             text: item,
-            completed: false}
+            completed: false
+        }
             console.log(newTodo)
         dispatch(addItem(newTodo))
 
