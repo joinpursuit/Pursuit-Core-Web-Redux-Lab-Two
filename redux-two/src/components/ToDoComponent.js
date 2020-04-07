@@ -1,25 +1,14 @@
-import React from 'react'
+import React from "react";
 
-
-const toDo = ()=>{
-   
-
-
+const ToDoComponent = () => {
   return (
     <ul>
-        items
+      items
       {/* {newToDo.map((item) => {
                 return <li key={item.id}>{item.name}</li>
             })} */}
     </ul>
-  )
+  );
+};
 
-
-
-}
-
-
-
-
-
-export default toDo
+export default ToDoComponent;

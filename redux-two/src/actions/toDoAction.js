@@ -1,9 +1,9 @@
 import {ADD_TODO, CLEAR_TODO} from './actionTypes'
 
-export const addToDo = (todo) =>{
+export const addToDo = (toDo) =>{
     return{
         type: ADD_TODO,
-        payload: todo
+        payload: toDo
     }
 }
 
