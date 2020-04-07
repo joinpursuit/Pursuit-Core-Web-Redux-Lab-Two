@@ -1,8 +1,11 @@
 import { ADD_TODO } from '../Actions/actionTypes'
 
-const _defaultState = {};
+const defaultState = {
+    nextTodoId: 1,
+    todos: []
+}
 
-const todoReducer = (state = _defaultState, action ) => {
+const todoReducer = (state = defaultState, action) => {
     const newState = { ...state };
     switch(action.type) {
         case ADD_TODO:
@@ -10,7 +13,8 @@ const todoReducer = (state = _defaultState, action ) => {
                 ...action.payload,
                 completed: false
             }
-            newState[todo.id] = todo
+            newState.todos.push(todo)
+            newState.nextTodoId ++
             return newState;
         default:
             return state
