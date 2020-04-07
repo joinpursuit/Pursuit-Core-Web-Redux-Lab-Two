@@ -1,13 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { isComplete } from '../actions/todoAction';
 
 const ToDoList = () => {
+    const [completeItem, setCompleteItem] = useState(false)
+    const dispatch = useDispatch();
+
     const todoList = useSelector(state => { 
         return state
        });
     
-    const handleComplete = () => {
+    const handleComplete = (e) => {
+        e.preventDefault()
         debugger
+        console.log(completeItem)
+        dispatch(isComplete(completeItem))
+        setCompleteItem(false)
+        console.log(completeItem)
+        // return e.target
     }
     
     return <ul>

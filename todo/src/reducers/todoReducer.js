@@ -10,7 +10,7 @@ const todoReducer = (state = [], action) => {
             return [todo, ...state]
         case IS_COMPLETE:
             let completeItem = state[action.payload]
-            completeItem.completed =!completeItem.completed
+            completeItem.completed = !completeItem.completed
             return state
         default:
             return state; 
