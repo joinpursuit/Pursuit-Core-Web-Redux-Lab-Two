@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 
 const DisplayTodo = () => {
   const todos = useSelector((state) => {
-    return Object.values(state.todos);
+    return state.todos
   });
   return (
     <ul>
-      {todos.map((todo) => {
-        return <li key={todo.id}>{todo.item}</li>;
+      {todos.map((todo, id) => {
+        return <li key={id}>{todo}</li>;
     })}
     </ul>
   );

@@ -1,17 +1,9 @@
 import { ADD_TODO } from "../Actions/ActionTypes";
 
-const _defaultState = {};
-// let objId = 0;
-const TodoReducer = (state = _defaultState, action) => {
-  Object.freeze(state);
-  const newState = { ...state };
+const TodoReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
-      let list = {
-        ...action.payload,
-      };
-      newState[action.payload.id] = list;
-      return newState;
+        return [...state, action.payload]
     default:
       return state;
   }
