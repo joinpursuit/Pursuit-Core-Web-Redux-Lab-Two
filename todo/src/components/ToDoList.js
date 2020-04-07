@@ -3,15 +3,14 @@ import { useSelector } from 'react-redux'
 
 const ToDoList = () => {
     const todoList = useSelector(state => { 
-        return Object.values(state)
+        return state
        });
 
-    return (
-        <ul>
-            {todoList.map(todo=>{
-                return <li key={todo}>{todo}</li>
+    return <ul>
+            {todoList.map((todo, i)=>{
+                return <li key={i}>{todo.todo}</li>
             })}
-         </ul>)
+         </ul>
 }
 
 export default ToDoList

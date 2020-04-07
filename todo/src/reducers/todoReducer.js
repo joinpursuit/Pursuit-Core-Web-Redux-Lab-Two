@@ -1,9 +1,13 @@
-const { ADD_ITEM } = require('../actions/todoAction');
+import { ADD_ITEM } from '../actions/actionTypes';
 
-const todoReducer = (state = {}, action) => {
+const todoReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_ITEM:
-            return [...state, action.payload]
+            let todo = { 
+                ...action.payload, 
+                completed: false
+            }
+            return [todo, ...state]
         default:
             return state; 
     }

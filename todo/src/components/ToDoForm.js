@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { addItem } from '../actions/todoAction';
 import { useDispatch } from 'react-redux';
 
+let nextToDo = 1
 
 const ToDoForm = () => {
     const [todo, setTodo] = useState("");
@@ -9,7 +10,10 @@ const ToDoForm = () => {
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addItem(todo))
+        dispatch(addItem({
+            id: nextToDo++,
+            todo
+        }))
         setTodo("");
     }
 
