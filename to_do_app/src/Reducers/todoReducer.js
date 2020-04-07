@@ -1,7 +1,7 @@
 import { ADD_TODO, TOGGLE_TODO } from "../Actions/actionTypes";
 
 import { addTodo, toggleToDo } from "../Actions/actions";
-//do i need to import that action functions?
+//do i need to import the action functions?
 
 //is there where i say what i want the initial state to be? and should it be a todo since this is what we are updating?
 const initialState = {
