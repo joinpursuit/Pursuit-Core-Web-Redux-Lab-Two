@@ -3,11 +3,15 @@ const db = require("../db/index");
 const getAlltodos = async (req, res, next) => {
   try {
     let todos = await db.any("SELECT * FROM todos");
+    res.json({
+      status: "Success",
+      message: "got ALL todos",
+      payload: todos,
+    });
   } catch (error) {
     res.json({
       status: "error",
-      message: "Success",
-      payload: todos,
+      message: "Could not get todos",
     });
   }
 };
@@ -15,19 +19,19 @@ const getAlltodos = async (req, res, next) => {
 const addSingleToDO = async (req, res, next) => {
   try {
     let { description } = req.body;
-    let comments = await db.one(
-      "INSERT INTO comments (description) VALUES ($1) RETURNING *",
+    let todo = await db.one(
+      "INSERT INTO todo (description) VALUES ($1) RETURNING *",
       [description]
     );
     res.status(200).json({
-      comments,
+      todo,
       status: "success",
-      message: "added a single comment",
+      message: "added a single todo",
     });
   } catch (error) {
     res.json({
       status: "error",
-      message: "unable to add comment",
+      message: "unable to add todo",
       payload: null,
     });
   }

@@ -4,10 +4,10 @@ CREATE DATABASE todo_db;
 
 \c todo_db;
 
--- Create Tables
 DROP TABLE IF EXISTS todos;
 
--- Create user Table
+-- Create Tables
+-- Create todos Table
 CREATE TABLE todos
 (
     id SERIAL PRIMARY KEY,
