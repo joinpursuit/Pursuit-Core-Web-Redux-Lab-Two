@@ -1,8 +1,4 @@
-import {
-  ADD_TODO,
-  TOGGLE_TODO,
-  //   SET_VISIBILITY_FILTER,
-} from "../actions/actionTypes";
+import { ADD_TODO, TOGGLE_TODO } from "../actions/actionTypes";
 
 const _defaultState = {};
 const todoReducer = (state = _defaultState, action) => {

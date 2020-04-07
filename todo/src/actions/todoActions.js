@@ -1,8 +1,4 @@
-import {
-  ADD_TODO,
-  TOGGLE_TODO,
-  //   SET_VISIBILITY_FILTER,
-} from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO } from "./actionTypes";
 
 export const addTodo = (todo) => {
   return {
