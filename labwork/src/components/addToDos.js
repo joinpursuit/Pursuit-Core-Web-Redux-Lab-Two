@@ -1,16 +1,20 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addToDo } from "../actions/addToDoActions";
+import { useSelector,useDispatch } from "react-redux";
+import { addToDo } from "../actions/toDoActions";
 import { useInputs } from "../utility/customHooks"
 
 const AddToDos = () => {
+    const id = useSelector((state)=> state.nextTodoId)
     const newToDo = useInputs("");
     const dispatch = useDispatch();
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addToDo(newToDo.value))
-        newToDo.value = "";
+        dispatch(addToDo({
+            id,
+            body: newToDo.value,
+            completed: false
+        }));
     }
     return (
         <div>

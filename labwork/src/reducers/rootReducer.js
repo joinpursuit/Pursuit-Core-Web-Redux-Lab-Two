@@ -1,8 +1,11 @@
-import addReducer from "./addReducer";
+import toDoReducer from "./toDoReducer";
+import nextToDoIdReducer from "./nextToDoIdReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    todos: addReducer
+    nextTodoId: nextToDoIdReducer,
+    todos: toDoReducer
+    // visibilityFilter
 })
 
 export default rootReducer;
