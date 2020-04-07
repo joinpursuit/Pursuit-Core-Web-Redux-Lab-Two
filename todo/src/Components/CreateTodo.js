@@ -20,9 +20,7 @@ const CreateItem = () => {
           setItem(e.target.value);
         }}
       />
-      <button type="submit" onClick={handleChange}>
-        Add Item
-      </button>
+      <button type="submit">Add Item</button>
     </form>
   );
 };

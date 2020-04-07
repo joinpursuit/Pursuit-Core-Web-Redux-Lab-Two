@@ -2,16 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const DisplayTodo = () => {
-  const todos = useSelector((state) => {
-    return state.todos
+  const todosList = useSelector((state) => {
+    return Object.values(state.todos);
   });
-  return (
-    <ul>
-      {todos.map((todo, id) => {
-        return <li key={id}>{todo}</li>;
-    })}
-    </ul>
-  );
+
+  let displayList = todosList.map((list) => {
+    return <li key={list.id}>{list.list}</li>;
+  });
+  return <ul>{displayList}</ul>;
 };
 
 export default DisplayTodo;
