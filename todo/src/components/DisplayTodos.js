@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { completeTodo } from "../actions/todoActions";
 import VisibilityButtons from "./VisibilityButtons";
+import axios from "axios";
 
 const DisplayTodos = () => {
   const todoList = useSelector((state) => Object.values(state.toDos));
   const visibility = useSelector((state) => state.visibilityFilter);
 
   const dispatch = useDispatch();
+
+  const displayTodos = async () => {
+    try {
+      debugger;
+      let res = await axios.get("http://localhost:3000/todos");
+      debugger;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    displayTodos();
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
