@@ -60,6 +60,7 @@ li {
   font-size: 40px;
   font-family: monospace;
   list-style: inside;
+  cursor: pointer;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

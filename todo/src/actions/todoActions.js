@@ -9,14 +9,15 @@ export const addTodo = (todo) => {
     type: ADD_TODO,
     payload: {
       id: todo.id,
-      todo,
+      todoItem: todo,
       text: todo.text,
     },
   };
 };
 
-export const toggleTodo = () => {
+export const toggleTodo = (value) => {
   return {
     type: TOGGLE_TODO,
+    payload: value,
   };
 };

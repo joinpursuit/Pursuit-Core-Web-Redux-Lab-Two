@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../actions/todoActions";
 import DisplayTodos from "./DisplayTodos";
-let idCount = 0;
+
+let idCount = 1;
 const Todo = () => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(
       addTodo({
-        id: idCount + 1,
+        id: idCount,
         text: input,
         completed: false,
       })
@@ -21,7 +21,6 @@ const Todo = () => {
     idCount += 1;
     setInput("");
   };
-  console.log(todos);
 
   return (
     <div>
