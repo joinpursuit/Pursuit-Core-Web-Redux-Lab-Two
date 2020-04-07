@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from '../Actions/actionTypes'
+import { ADD_TODO } from '../Actions/actionTypes'
 
 const _defaultState = {};
 

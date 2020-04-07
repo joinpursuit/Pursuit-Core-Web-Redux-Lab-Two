@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO  } from './actionTypes'
+import { ADD_TODO  } from './actionTypes'
 
 export const addTodo = (todo) => {
     return {
@@ -7,9 +7,3 @@ export const addTodo = (todo) => {
     }
 }
 
-export const toggleTodo = (id) => {
-    return {
-        type: TOGGLE_TODO,
-        payload: id
-    }
-}
