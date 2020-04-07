@@ -7,6 +7,7 @@ export const addTodo = (input) => {
     payload: {
       id: todoID++,
       text: input,
+      completed: false,
     },
   };
 };
