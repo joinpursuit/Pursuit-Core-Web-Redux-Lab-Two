@@ -1,6 +1,15 @@
-import { createStore } from "redux";
-import RootReducer from "../Reducers/RootReducer";
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk'; // thunk will allow us to dispatch functions as well as actions 
+import rootReducer from '../Reducers/RootReducer';
+const store = createStore(rootReducer, {}, applyMiddleware(logger, thunk))
+export default store; 
 
-const Store = createStore(RootReducer);
 
-export default Store;
+// Essentially what thunk does under the hood.
+// const thunk = ({dispatch, getState}) => (next) => (action) => {
+//   if (typeof action === "function") {
+//     return action(dispatch, getState);
+//   }
+//   return next(action);
+// };

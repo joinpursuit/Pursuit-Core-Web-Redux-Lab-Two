@@ -1,23 +1,19 @@
-import { ADD_TODO, COMPLETE_TODO } from "../Actions/ActionTypes";
+import { RECEIVE_TODO, TOGGLE_TODO } from '../Actions/ActionTypes';
 
-const _defaultState = {};
+const todosReducer = (state = {}, {type, payload}) => { // still takes in action but destructors it
+    const newState = {...state};
+    switch (type) {
+      case RECEIVE_TODO:
+        newState[payload.id] = payload;
+        return newState;
+      case TOGGLE_TODO:
+        const todo = {...newState[payload]}
+        todo.complete = !todo.complete; 
+        newState[payload] = todo; 
+        return newState; 
+      default:
+        return state;
+    }
+}
 
-const TodoReducer = (state = _defaultState, action) => {
-  Object.freeze(state);
-  const newState = { ...state };
-
-  switch (action.type) {
-    case ADD_TODO:
-      let newTodo = { ...action.payload, complete: false };
-      newState[newTodo.id] = newTodo;
-      return newState;
-    case COMPLETE_TODO:
-      let completedItem = newState[action.payload];
-      completedItem.complete = true;
-      return newState
-    default:
-      return newState;
-  }
-};
-
-export default TodoReducer;
+export default todosReducer;
