@@ -10,19 +10,19 @@ const DisplayTodos = () => {
 
   const dispatch = useDispatch();
 
-  const displayTodos = async () => {
-    try {
-      debugger;
-      let res = await axios.get("http://localhost:3000/todos");
-      debugger;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const displayTodos = async () => {
+  //   try {
+  //     debugger;
+  //     let res = await axios.get("http://localhost:3000/todos");
+  //     debugger;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    displayTodos();
-  }, []);
+  // useEffect(() => {
+  //   displayTodos();
+  // }, []);
 
   const handleClick = (e) => {
     e.preventDefault();

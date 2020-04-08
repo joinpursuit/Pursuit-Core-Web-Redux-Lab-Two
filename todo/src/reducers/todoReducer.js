@@ -1,18 +1,19 @@
 import { ADD_TODO, COMPLETE_TODO } from "../actions/actionTypes.js";
 
 const _defaultState = {};
-const todoReducer = (state = _defaultState, action) => {
+const todoReducer = (state = _defaultState, { type, payload }) => {
+  // still takes in action, destructors it
   Object.freeze(state);
   const newState = { ...state };
 
-  switch (action.type) {
+  switch (type) {
     case ADD_TODO:
-      let newTodo = { ...action.payload };
-      newState[newTodo.id] = newTodo;
+      newState[payload.id] = payload;
       return newState;
     case COMPLETE_TODO:
-      let toDoItem = newState[action.payload];
-      toDoItem.completed = true;
+      const todo = { ...newState[payload] };
+      todo.complete = !todo.complete;
+      newState[payload] = todo;
       return newState;
     default:
       return newState;
