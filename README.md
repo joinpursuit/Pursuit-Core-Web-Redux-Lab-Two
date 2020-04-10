@@ -1,3 +1,13 @@
+<!-- Homework :slightly_smiling_face: I want you to build a backend for you application.
+// You will need to be able to fetchAllTodos
+// AddTods
+// ToggleTodos
+// These need to be saved into your backend.
+//BONUS: Add a spinner to match you loading state.
+// Handle and display errors to users.
+// Add steps for each todo -->
+
+
 
 [![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
@@ -93,3 +103,4 @@ Here are some suggestions for your actions and action types. You can, of course,
 ## Resources
 * [React-Redux Basic Tutorial](https://react-redux.js.org/introduction/basic-tutorial)
 * [Redux Basics Tutorial](https://redux.js.org/basics/basic-tutorial)
+  
