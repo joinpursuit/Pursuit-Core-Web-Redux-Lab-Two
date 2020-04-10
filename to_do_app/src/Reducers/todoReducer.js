@@ -4,7 +4,6 @@ const _defaultState = [];
 
 const todoReducer = (state = _defaultState, action) => {
   Object.freeze(state);
-  const newState = [...state];
 
   //   {
   //     nextTodoId: 1,
@@ -14,7 +13,13 @@ const todoReducer = (state = _defaultState, action) => {
 
   switch (action.type) {
     case ADD_TODO:
-      return [];
+      let newState = [...state, action.payload];
+      return newState;
+    case TOGGLE_TODO:
+      const todo = { ...newState[action.payload] };
+      todo.complete = !todo.complete;
+      newState[payload] = todo;
+      return newState;
     default:
       return state;
   }

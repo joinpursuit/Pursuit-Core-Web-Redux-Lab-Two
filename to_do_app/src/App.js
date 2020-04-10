@@ -3,6 +3,7 @@ import "./App.css";
 import ToDo from "./Components/ToDo";
 import TodoList from "./Components/TodoList";
 import VisibilityFilter from "./Components/VisibilityFilter";
+import PostsList from "./Components/postsList";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <ToDo />
       <TodoList />
       <VisibilityFilter />
+      <PostsList />
     </div>
   );
 }
