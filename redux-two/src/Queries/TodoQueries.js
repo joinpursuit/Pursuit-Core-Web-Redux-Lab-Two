@@ -3,7 +3,7 @@ const db = require("../db/db");
 const getTodo = async (req, res) => {
   try {
     let user = await db.one(
-      "SELECT * FROM users WHERE username = $1",
+      "SELECT * FROM todo WHERE username = $1",
       req.params.username
     );
     res.status(200).json({
@@ -24,18 +24,18 @@ const createTodo = async (req, res) => {
   console.log(req.body);
   try {
     let newUser = await db.one(
-      "INSERT INTO users (fullname, username, email, age, profile_pic) VALUES(${fullname}, ${username}, ${email}, ${age}, ${profile_pic}) RETURNING *",
+      "INSERT INTO todo (username, name, completed) VALUES ${username}, ${name}, ${completed}) RETURNING *",
       req.body
     );
     res.status(200).json({
       status: "success",
-      message: "A new user is created ",
+      message: "A new todo is created ",
       payload: newUser
     });
   } catch (err) {
     res.status(404).json({
       status: err,
-      message: "user was not created",
+      message: "todo was not created",
       payload: null
     });
   }
@@ -43,15 +43,15 @@ const createTodo = async (req, res) => {
 
 const deleteTodo = async (req, res) => {
   try {
-    await db.none("DELETE FROM users WHERE id = $1", req.params.id);
+    await db.none("DELETE FROM todo WHERE id = $1", req.params.id);
     res.status(200).json({
       status: "success",
-      message: "The user is deleted"
+      message: "The todo is deleted"
     });
   } catch (err) {
     res.status(404).json({
       status: err,
-      message: "The user was not deleted"
+      message: "The todo was not deleted"
     });
   }
 };
