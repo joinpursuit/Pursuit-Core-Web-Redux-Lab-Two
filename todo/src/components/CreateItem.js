@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
-import { addItem } from '../actions/toDoActions'
-import { useDispatch } from 'react-redux'
-let itemId = 1
+import {createTodo } from '../actions/toDoActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const CreateItem = () => {
+    const id = useSelector(state => state.nextId)
     const dispatch = useDispatch()
     const [item, setItem] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        let newTodo = {id: itemId++,
+        let newTodo = {id: id,
             text: item,
             completed: false
         }
             console.log(newTodo)
-        dispatch(addItem(newTodo))
-
+        dispatch(createTodo(newTodo))
         setItem("")
     }
     return (

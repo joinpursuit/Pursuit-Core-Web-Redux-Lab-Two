@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { toggleTodo } from '../actions/toDoActions'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { fetchAllTodos } from '../actions/toDoActions'
 const ToDo = () => {
     const dispatch = useDispatch()
 
     const items = useSelector(state => {
-        return Object.values(state.toDos)
+        return Object.values(state.toDos);
     })
+
+   useEffect(() => {
+       dispatch(fetchAllTodos(items))
+   }, [items])
+
     return (
         <div>
             <ul>
