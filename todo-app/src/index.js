@@ -5,9 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import { createTodo } from './actions/todoActions';
-window.createTodo = createTodo;
-window.store = store;
+
 
 ReactDOM.render(
   <React.StrictMode>

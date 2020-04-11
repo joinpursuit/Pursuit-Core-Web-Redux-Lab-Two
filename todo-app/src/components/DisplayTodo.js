@@ -1,36 +1,25 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { markComplete } from "../actions/todoActions";
- 
-
+import { useSelector } from "react-redux";
+import Todolist from "./Todolist"
 
 const DisplayTodos = () => {
-  const allTodos = useSelector((state) => {
-    return Object.values(state.todos)
+  let allTodos = useSelector((state) => {
+    return Object.values(state.todos);
   })
-
   const filterState = useSelector((state) => {
-    return state.filter
-  })
+    return state.filter;
+  });
 
-console.log(filterState)
-
-  const dispatch = useDispatch();
-
-  const handleClick = (e) => {
-    dispatch(markComplete(e.currentTarget.value))
+  if (filterState === "Complete") {
+    allTodos = allTodos.filter((todo) => todo.completed);
+    return (<Todolist allTodos={allTodos}/>)
+  } else if (filterState === "Active") {
+    allTodos = allTodos.filter((todo) => !todo.completed)
+    return (<Todolist allTodos={allTodos}/>)
+  } else {
+    return (<Todolist allTodos={allTodos}/>)
   }
 
- 
-  return (
-    <ul>
-      {allTodos.map((todo) => {
-        return todo.completed ?
-        <li key={todo.id} value={todo.id} style={{ textDecoration: "line-through" }} onClick={handleClick}>{todo.text}</li> :
-        <li key={todo.id} value={todo.id} onClick={handleClick}>{todo.text}</li>
-      })}
-    </ul>
-  )
-}
 
+};
 export default DisplayTodos;
