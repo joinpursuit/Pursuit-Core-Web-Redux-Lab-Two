@@ -2,10 +2,18 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { markComplete } from "../actions/todoActions";
  
+
+
 const DisplayTodos = () => {
   const allTodos = useSelector((state) => {
     return Object.values(state.todos)
   })
+
+  const filterState = useSelector((state) => {
+    return state.filter
+  })
+
+console.log(filterState)
 
   const dispatch = useDispatch();
 
