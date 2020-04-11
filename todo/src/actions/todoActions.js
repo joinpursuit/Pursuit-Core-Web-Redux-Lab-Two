@@ -40,7 +40,8 @@ export const receiveTodos = (todos) => {
 //   };
 // };
 
-export const loading = () => {
+export const loading = (status) => {
+  console.log(status);
   return {
     type: LOADING,
   };
@@ -55,10 +56,8 @@ export const todoVisibility = (filter) => {
 
 export const fetchTodos = () => async (dispatch) => {
   try {
-    setTimeout(async () => {
-      let res = await axios.get("http://localhost:3000/todos");
-      dispatch(receiveTodos(res.data.payload));
-    }, 3000);
+    let res = await axios.get("http://localhost:3000/todos");
+    dispatch(receiveTodos(res.data.payload));
   } catch (error) {
     console.log(error);
   }
@@ -76,11 +75,15 @@ export const updateTodos = (id, completed) => async (dispatch) => {
 };
 
 export const addSingleTodo = (description) => async (dispatch) => {
+  dispatch(loading("loading"));
   try {
     let res = await axios.post(`http://localhost:3000/todos/`, {
       description,
     });
-    dispatch(fetchTodos());
+    setTimeout(async () => {
+      dispatch(loading("loaded"));
+      dispatch(fetchTodos());
+    }, 3000);
   } catch (error) {
     console.log(error);
   }

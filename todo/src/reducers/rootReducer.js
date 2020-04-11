@@ -7,7 +7,7 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
   toDos: todoReducer,
   visibilityFilter: visibilityFilterReducer,
-  loaded: false,
+  loading: loadingReducer,
 });
 
 export default rootReducer;

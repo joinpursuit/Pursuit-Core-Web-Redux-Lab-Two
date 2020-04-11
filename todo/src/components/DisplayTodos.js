@@ -4,6 +4,7 @@ import VisibilityButtons from "./VisibilityButtons";
 import TodoListItem from "./TodoListItem";
 import axios from "axios";
 import { fetchTodos } from "../actions/todoActions";
+import loadingImg from "../components/Ghosty.gif";
 
 const filterTodos = (todoList, filter) => {
   if (filter === "all") return todoList;
@@ -14,19 +15,28 @@ const filterTodos = (todoList, filter) => {
 const DisplayTodos = () => {
   const todoList = useSelector((state) => Object.values(state.toDos));
   const visibility = useSelector((state) => state.visibilityFilter);
+  const loading = useSelector((state) => state.loading);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTodos());
   }, []);
-
+  console.log("loading:", loading);
   return (
     <>
+      <br></br>
       <VisibilityButtons />
-      {filterTodos(todoList, visibility)
-        .reverse()
-        .map((todo) => {
+      {loading === false ? (
+        <img
+          src={loadingImg}
+          alt="loading"
+          style={{ height: "180px", width: "240px" }}
+        ></img>
+      ) : (
+        filterTodos(todoList, visibility).map((todo) => {
           return <TodoListItem todo={todo} key={todo.id} />;
-        })}
+        })
+      )}
     </>
   );
 };
