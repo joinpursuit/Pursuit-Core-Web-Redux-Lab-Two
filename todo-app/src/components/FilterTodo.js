@@ -1,32 +1,13 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { filterTodo } from '../actions/todoActions'
 
-const FilterVisibility = () => {
-	// const todolist = useSelector((state) => {
-	// 	return Object.values(state.todos);
-	// });
-	const filterState = useSelector((state) => {
-		return state.filter
-	})
+const FilterVisibilityBtn = () => {
 	const dispatch = useDispatch();
 	const handleClick = (e) => {
-		dispatch(filterTodo())
-
-		
-
-
-    //   debugger;
-		// if (e.target.value === "Active") {
-		// 	return todolist.filter((todo) => todo.completed === false);
-		// } else if (e.target.value === "Complete") {
-		// 	return todolist.filter((todo) => todo.completed !== false);
-		// } else {
-		// 	return todolist;
-		// }
-	};
-	console.log(filterState)
-
+		dispatch(filterTodo(e.target.value))
+	}
+	
 	return (
 		<div>
 			<form onSubmit={(e) => e.preventDefault()}>
@@ -45,4 +26,4 @@ const FilterVisibility = () => {
 	);
 };
 
-export default FilterVisibility;
+export default FilterVisibilityBtn;
