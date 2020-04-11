@@ -1,3 +1,15 @@
-import SET_FILTER from "../actions/actionTypes";
+import { SET_FILTER } from "../actions/actionTypes";
 
-// export default ()
+const _defaultState = "ALL"
+const filterReducer = (state = _defaultState, action) => {
+  switch (action.type) {
+    case SET_FILTER:
+     return "this is working" 
+
+  
+    default:
+     return state
+  }
+}
+
+export default filterReducer

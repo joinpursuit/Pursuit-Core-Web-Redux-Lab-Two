@@ -1,21 +1,31 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { filterTodo } from '../actions/todoActions'
 
 const FilterVisibility = () => {
-	const todolist = useSelector((state) => {
-		return Object.values(state.todos);
-	});
-
+	// const todolist = useSelector((state) => {
+	// 	return Object.values(state.todos);
+	// });
+	const filterState = useSelector((state) => {
+		return state.filter
+	})
+	const dispatch = useDispatch();
 	const handleClick = (e) => {
-      debugger;
-		if (e.target.value === "Active") {
-			return todolist.filter((todo) => todo.completed === false);
-		} else if (e.target.value === "Complete") {
-			return todolist.filter((todo) => todo.completed !== false);
-		} else {
-			return todolist;
-		}
+		dispatch(filterTodo())
+
+		
+
+
+    //   debugger;
+		// if (e.target.value === "Active") {
+		// 	return todolist.filter((todo) => todo.completed === false);
+		// } else if (e.target.value === "Complete") {
+		// 	return todolist.filter((todo) => todo.completed !== false);
+		// } else {
+		// 	return todolist;
+		// }
 	};
+	console.log(filterState)
 
 	return (
 		<div>

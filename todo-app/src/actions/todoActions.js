@@ -1,4 +1,5 @@
-import { ADD_TODO, TOGGLE_TODO } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from "./actionTypes";
+
 
 export const createTodo = (todo) => {
   return {
@@ -14,9 +15,9 @@ export const markComplete = (id) => {
   }
 }
 
-// export const filterTodo = (id) => {
-//   return {
-//     type: SET_FILTER,
-//     payload: id
-//   }
-// }
+export const filterTodo = () => {
+  return {
+    type: SET_FILTER,
+    // payload: id
+  }
+}
