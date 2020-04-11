@@ -1,3 +1,17 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "cSpell.ignoreWords": [
+    "alph",
+    "diagnol",
+    "dups",
+    "each",
+    "is",
+    "len",
+    "minmax",
+    "myfor",
+    "no",
+    "nums",
+    "robo",
+    "todolist"
+  ]
 }
