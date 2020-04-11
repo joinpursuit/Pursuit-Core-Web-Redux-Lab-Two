@@ -14,7 +14,7 @@ const VisibilityButtons = () => {
     <>
       <button
         type="onClick"
-        value="ALL"
+        value="all"
         onClick={(e) => {
           handleVisibility(e);
         }}
@@ -23,14 +23,14 @@ const VisibilityButtons = () => {
       </button>
       <button
         type="onClick"
-        value="ACTIVE"
+        value="active"
         onClick={(e) => handleVisibility(e)}
       >
         Active
       </button>
       <button
         type="onClick"
-        value="COMPLETE"
+        value="complete"
         onClick={(e) => handleVisibility(e)}
       >
         Completed

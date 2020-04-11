@@ -12,7 +12,8 @@ CREATE TABLE todos
 (
     id SERIAL PRIMARY KEY,
     description VARCHAR,
-    completed BOOLEAN
+    completed BOOLEAN,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO todos

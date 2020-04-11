@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../actions/todoActions";
+import { addSingleTodo } from "../actions/todoActions";
 
 const CreateTodo = () => {
   const [input, setInput] = useState("");
@@ -8,7 +8,7 @@ const CreateTodo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
+    dispatch(addSingleTodo(input));
     setInput("");
   };
 

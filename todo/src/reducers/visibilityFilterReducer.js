@@ -1,6 +1,6 @@
 import { VISIBILITY_FILTER } from "../actions/actionTypes";
 
-const _defaultState = "ALL";
+const _defaultState = "all";
 
 const visibilityFilterReducer = (state = _defaultState, action) => {
   Object.freeze(state);
