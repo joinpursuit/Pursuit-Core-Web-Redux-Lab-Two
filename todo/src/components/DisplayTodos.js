@@ -15,7 +15,6 @@ const DisplayTodos = () => {
   const todoList = useSelector((state) => Object.values(state.toDos));
   const visibility = useSelector((state) => state.visibilityFilter);
   const dispatch = useDispatch();
-  console.log(todoList);
   useEffect(() => {
     dispatch(fetchTodos());
   }, []);

@@ -1,12 +1,13 @@
 import {
-  ADD_TODO,
-  COMPLETE_TODO,
+  // ADD_TODO,
+  // COMPLETE_TODO,
   VISIBILITY_FILTER,
   DISPLAY_TODOS,
+  LOADING,
 } from "./actionTypes";
 import axios from "axios";
 
-let todoID = 0;
+// let todoID = 0;
 
 // const addTodoToDatabase = async (todo) => {
 //   if (todo.body === "soda") throw Error("No Soda Allowed");
@@ -39,6 +40,12 @@ export const receiveTodos = (todos) => {
 //   };
 // };
 
+export const loading = () => {
+  return {
+    type: LOADING,
+  };
+};
+
 export const todoVisibility = (filter) => {
   return {
     type: VISIBILITY_FILTER,
@@ -48,8 +55,10 @@ export const todoVisibility = (filter) => {
 
 export const fetchTodos = () => async (dispatch) => {
   try {
-    let res = await axios.get("http://localhost:3000/todos");
-    dispatch(receiveTodos(res.data.payload));
+    setTimeout(async () => {
+      let res = await axios.get("http://localhost:3000/todos");
+      dispatch(receiveTodos(res.data.payload));
+    }, 3000);
   } catch (error) {
     console.log(error);
   }
