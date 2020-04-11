@@ -1,3 +1,5 @@
-export const ADD_TODO = "ADD_TODO"
-export const CLEAR_TODO = "CLEAR_TODO"
-
+export const RECEIVE_TODO = "RECEIVE_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const RECEIVE_ERROR = "RECEIVE_ERROR";

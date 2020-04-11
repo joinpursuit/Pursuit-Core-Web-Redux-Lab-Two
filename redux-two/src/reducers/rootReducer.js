@@ -1,6 +1,12 @@
-import toDoReducer from "./toDoReducer";
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
+import todosReducer from './todosReducer';
+import nextTodoIdReducer from "./nextTodoId";
+import visibilityFilterReducer from './visibilityFilter';
+import errorsReducer from './ErrorsReducer'
 
-const rootReducer = combineReducers({ toDo: toDoReducer });
-
-export default rootReducer
+export default combineReducers({
+  todos: todosReducer,
+  nextId: nextTodoIdReducer,
+  visibilityFilter: visibilityFilterReducer,
+  errors: errorsReducer,
+});
