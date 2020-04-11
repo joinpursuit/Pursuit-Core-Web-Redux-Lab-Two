@@ -5,6 +5,7 @@ import { filterTodo } from '../actions/todoActions'
 const FilterVisibilityBtn = () => {
 	const dispatch = useDispatch();
 	const handleClick = (e) => {
+		debugger
 		dispatch(filterTodo(e.target.value))
 	}
 	
