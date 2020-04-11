@@ -7,22 +7,19 @@ const ToDoList = () => {
     const dispatch = useDispatch();
 
     const todoList = useSelector(state => { 
-        return state
+        // return state
+        return Object.values(state);
        });
     
     const handleComplete = (e) => {
-        e.preventDefault()
-        debugger
-        console.log(completeItem)
-        dispatch(isComplete(completeItem))
-        setCompleteItem(false)
-        console.log(completeItem)
-        // return e.target
+        e.preventDefault();
+        dispatch(isComplete(Number(e.target.id)));
+        setCompleteItem(false);
     }
-    
+
     return <ul>
-            {todoList.map((todo, i)=>{
-                return <li key={i} onClick={handleComplete}>{todo.todo}</li>
+            {todoList.map((todo)=>{
+                return <li key={todo.id} id={todo.id} onClick={handleComplete}>{todo.todo}</li>
             })}
          </ul>
 }

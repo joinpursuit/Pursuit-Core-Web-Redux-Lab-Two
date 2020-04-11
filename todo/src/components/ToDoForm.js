@@ -6,8 +6,8 @@ let nextToDo = 1
 
 const ToDoForm = () => {
     const [todo, setTodo] = useState("");
-
     const dispatch = useDispatch();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addItem({
