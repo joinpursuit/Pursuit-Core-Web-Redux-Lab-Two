@@ -3,7 +3,11 @@ import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from "./actionTypes";
 export const createTodo = (todo) => {
 	return {
 		type: ADD_TODO,
-		payload: todo,
+		payload: {
+			id,
+			text: todo,
+			completed: false
+		}
 	};
 };
 
