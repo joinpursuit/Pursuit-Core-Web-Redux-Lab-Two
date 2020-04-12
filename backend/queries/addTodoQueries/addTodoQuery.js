@@ -1,18 +1,24 @@
 const db = require("../../db/index");
 
-const getTodosById = async (req, res, next) => {
-  const { id } = req.params;
+const getTodos = async (req, res, next) => {
+ 
   try {
-    let todos = await db.one(`SELECT * FROM todos WHERE id = $1`, id);
+    let todos = await db.any(`SELECT * FROM todos`);
     res.status(200).json({
       status: "ok",
-      todos,
+      payload: todos,
       message: "Retrieved All Todos"
     });
   } catch (error) {
     next(error);
   }
 };
+const addTodo = async (req, res, next) => {
+  try {
+    
+  }catch (error) {
+    next(error);
+  }
+}
 
-
-module.exports = { getTodosById };
+module.exports = { getTodos };

@@ -1,7 +1,7 @@
 const todos = require("express").Router();
-const { getTodosById } = require("../queries/addTodoQueries/addTodoQuery");
+const { getTodos } = require("../queries/addTodoQueries/addTodoQuery");
 
-todos.get("/", getTodosById);
+todos.get("/", getTodos);
 
 
 module.exports = todos;
