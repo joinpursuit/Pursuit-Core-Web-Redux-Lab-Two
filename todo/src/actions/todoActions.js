@@ -1,12 +1,12 @@
 import { ADD_TODO, TOGGLE_TODO } from "./actionTypes";
 
-export const addTodo = (todo) => {
+export const addTodo = (todoObj) => {
   return {
     type: ADD_TODO,
     payload: {
-      id: todo.id,
-      todoItem: todo,
-      text: todo.text,
+      id: todoObj.id,
+      todoItem: todoObj,
+      text: todoObj.text,
     },
   };
 };

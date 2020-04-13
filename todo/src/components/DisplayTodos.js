@@ -9,14 +9,18 @@ const DisplayTodos = () => {
   const visState = useSelector((state) => state.visibilityFilter);
   const dispatch = useDispatch();
 
-  const todoFilter = (todosArr) => {
-    return todosArr.filter((todo) => {
-      if (visState === todo.completed) {
-        return todo;
-      }
-    });
+  const todoFilter = (todosArr, visState) => {
+    if (visState === "ALL") {
+      return todosArr.reverse();
+    }
+    if (visState === "ACTIVE") {
+      return todosArr.filter((todo) => !todo.todoItem.completed).reverse();
+    }
+    if (visState === "COMPLETED") {
+      return todosArr.filter((todo) => todo.todoItem.completed).reverse();
+    }
   };
-  const todos = todoFilter(todosArr);
+  let todos = todoFilter(todosArr, visState);
 
   const clickHandler = (e) => {
     dispatch(toggleTodo(e.target.value));

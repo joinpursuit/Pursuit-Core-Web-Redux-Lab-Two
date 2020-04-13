@@ -9,7 +9,7 @@ const Todo = () => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
   // const visState = useSelector((state) => state.visibilityFilter);
-
+  // const todo = useSelector((state) => state.todos);
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTodo({ id: idCount, text: input, completed: false }));

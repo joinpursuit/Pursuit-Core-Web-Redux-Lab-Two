@@ -1,6 +1,7 @@
 import { ADD_TODO, TOGGLE_TODO } from "../actions/actionTypes";
 
 const _defaultState = {};
+
 const todoReducer = (state = _defaultState, action) => {
   Object.freeze(state);
 

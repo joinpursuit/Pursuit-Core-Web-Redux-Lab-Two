@@ -7,7 +7,7 @@ const visReducer = (state = _defaultState, action) => {
 
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return action;
+      return action.payload;
 
     default:
       return newState;
