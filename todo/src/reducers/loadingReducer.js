@@ -1,7 +1,6 @@
 import { LOADING } from "../actions/actionTypes";
 
-const _defaultState = true;
-const loadingReducer = (state = _defaultState, { type }) => {
+const loadingReducer = (state = true, { type }) => {
   switch (type) {
     case LOADING:
       return !state;

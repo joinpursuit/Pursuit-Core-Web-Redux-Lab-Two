@@ -1,3 +1,5 @@
+//** Commented code not needed anymore with database integration, used for reference. ** //
+
 import {
   // ADD_TODO,
   // COMPLETE_TODO,
@@ -5,6 +7,7 @@ import {
   DISPLAY_TODOS,
   LOADING,
 } from "./actionTypes";
+import { displayErrors } from "./errorActions";
 import axios from "axios";
 
 // let todoID = 0;
@@ -59,7 +62,7 @@ export const fetchTodos = () => async (dispatch) => {
     let res = await axios.get("http://localhost:3000/todos");
     dispatch(receiveTodos(res.data.payload));
   } catch (error) {
-    console.log(error);
+    dispatch(displayErrors(error.message));
   }
 };
 
@@ -70,7 +73,7 @@ export const updateTodos = (id, completed) => async (dispatch) => {
     });
     dispatch(fetchTodos());
   } catch (error) {
-    console.log(error);
+    dispatch(displayErrors(error.message));
   }
 };
 
@@ -85,6 +88,6 @@ export const addSingleTodo = (description) => async (dispatch) => {
       dispatch(fetchTodos());
     }, 3000);
   } catch (error) {
-    console.log(error);
+    dispatch(displayErrors(error.message));
   }
 };

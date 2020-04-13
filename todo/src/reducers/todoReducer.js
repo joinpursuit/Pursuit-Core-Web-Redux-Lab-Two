@@ -4,8 +4,7 @@ import {
   DISPLAY_TODOS,
 } from "../actions/actionTypes.js";
 
-const _defaultState = {};
-const todoReducer = (state = _defaultState, { type, payload }) => {
+const todoReducer = (state = {}, { type, payload }) => {
   // still takes in action, destructors it
   Object.freeze(state);
   let newState = { ...state };

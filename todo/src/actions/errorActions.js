@@ -1,10 +1,10 @@
-import { CLEAR_ERRORS, RECEIVE_ERROR } from "./actionTypes";
+import { CLEAR_ERRORS, DISPLAY_ERROR } from "./actionTypes";
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS,
 });
 
-export const receiveErrors = (err) => ({
-  type: RECEIVE_ERROR,
+export const displayErrors = (err) => ({
+  type: DISPLAY_ERROR,
   payload: err,
 });

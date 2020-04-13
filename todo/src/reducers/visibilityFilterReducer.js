@@ -1,17 +1,12 @@
 import { VISIBILITY_FILTER } from "../actions/actionTypes";
 
-const _defaultState = "all";
-
-const visibilityFilterReducer = (state = _defaultState, action) => {
+const visibilityFilterReducer = (state = "all", action) => {
   Object.freeze(state);
-  let newState = state;
-
   switch (action.type) {
     case VISIBILITY_FILTER:
-      newState = action.payload;
-      return newState;
+      return action.payload;
     default:
-      return newState;
+      return state;
   }
 };
 
