@@ -9,13 +9,16 @@ const TodoForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+    
         dispatch(createTodo({
+            
            body, 
            id,
            complete: false
         }))
         setBody("")
     }
+  
     return(
         <form onSubmit={handleSubmit}>
             <input value={body} onChange={e => setBody(e.target.value)} required/>
